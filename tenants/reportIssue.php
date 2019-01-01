@@ -72,7 +72,7 @@
             </div>
 
             <input class='btn btn-success' type='submit' value='Report'>
-            <button type="button" class="btn btn-danger">Cancel</button>
+            <a id="formButton" href="index.html" class="btn btn-danger">Cancel</a>
 
 
         </form>
