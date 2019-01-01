@@ -43,9 +43,9 @@
             /**
              * Eduardo Estrada
              * 12/30/2018
-             * maintPendingIssues.php
+             * UpdateIssues.php
              * Purpose:
-             * To update the maint issue form
+             * To update the maint issue by ID
              */
                 // get the the id
                 $issueID = $_GET["id"]; 
