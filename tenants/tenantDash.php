@@ -4,12 +4,21 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  
     <title>Tenant Portal 2019</title>
+
+    <style>
+            body {background-color: rgb(234, 234, 225);}
+
+        
+        </style>
+
+
+
+
+
+
   </head>
   <body>
 
@@ -23,14 +32,14 @@
                 <a class="nav-link" href="#">Tenant Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Open Issues</a>
+                <a class="nav-link" href="#"><ion-icon name="person"></ion-icon>&nbspMy Profile</a>
             </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Pending Issues</a>
+                <a class="nav-link" href="#"><ion-icon name="power"></ion-icon>&nbspLog-Out</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Closed Issues</a>
-            </li>
+
         </ul>
     </nav>
 
@@ -90,5 +99,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
 </body>
 </html>
