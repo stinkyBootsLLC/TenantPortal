@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(234, 234, 225);
+}
+
+.mainTitle-card h1 {
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    padding-left: 10px;
+    margin-bottom: 1.25rem;
+    font-size: 2.25rem;
+
+    font-family: 'Roboto', serif;
+    text-shadow: 2px 2px 2px #aaa;
+
+    
+}
+
+
+.mainTitle-card h5 {
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.651);
+    padding-left: 10px;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.login-cards h1 {
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+    padding-left: 10px;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+}
+
+
+
+.top-spacing{
+    padding-top: 0.5in;
+}
+
+.icon {
+    font-size: 50px;
+}
+
+.center {
+    margin: auto;
+    width: 75%;
+    padding: 10px;
+}
+
+
+.main-icons {
+    font-size: 64px;
+   /*color: blue;*/
+
+}
+
+.main-title {
+text-align: center;
+vertical-align: middle;
+line-height: 90px;       /* the same as your div height */
+}
+
+ /* unvisited link */
+ .main-title > a:link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* visited link */
+  .main-title > a:visited {
+    text-decoration: none;
+    color: green;
+  }
+  
+  /* mouse over link */
+  .main-title > a:hover {
+    text-decoration: none;
+    color: gray;
+  }
+  
+  /* selected link */
+  .main-title > a:active {
+    text-decoration: none;
+    color: gray;
+  } 

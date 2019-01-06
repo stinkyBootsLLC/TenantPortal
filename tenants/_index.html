@@ -1,5 +1,5 @@
-<!-- SDEV 300 7980 (Lab 7)  
-Date:
+<!--  
+Date: 01/05/2019
 Author: Eduardo Estrada
 Title: index.html
 description: Tenant Application Entrance and login form
@@ -11,29 +11,19 @@ description: Tenant Application Entrance and login form
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<!-- Font-Awsome CSS -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
+		crossorigin="anonymous">
         <title>Tenant Portal 2019</title>
         <meta name="author" content="Eduardo Estrada">
         <meta name="description" content="description here">
         <meta name="keywords" content="keywords,here">
-        <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-
-        <!-- move to seperate file -->
-        <style>
-			body {background-color: rgb(234, 234, 225);}
-            
-			.icon {
-				font-size: 50px;
-			}
-
-            .center {
-                margin: auto;
-                width: 75%;
-                padding: 10px;
-            }
-        
-        </style>
-		<!-- move to seperate file -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+		<!-- CSS home made sources-->
+		<link rel="stylesheet" href="../assets/css/tenants.css">
+		<link rel="stylesheet" href="../assets/css/Footer-Dark.css">
 	</head>
 	<body>
 		<header></header>
@@ -41,113 +31,98 @@ description: Tenant Application Entrance and login form
 				<!-- Brand/logo -->
 				<a class="navbar-brand" href="#">Tenant Portal</a>
 				<!-- Links -->
-				<ul class="navbar-nav">
+				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="tenantRegister.php"><ion-icon name="person-add"></ion-icon>&nbspRegister</a>
+						<a class="nav-link" href="tenantRegister.php"><ion-icon name="person-add"></ion-icon>&nbsp Register</a>
 					</li>
 				</ul>
 			</nav>
-
-
-
-
-
-
-
-
 		<main>
+			<div class="top-spacing"></div>
 				
-				<div class="row">
-						<div class="col-lg-3" style="background-color: blue;"></div>
-						<div class="col-lg-6" style="background-color:red;">
-							<div class="shadow p-3 mb-5 bg-white rounded">
-								<h1>Welcome to TENANT PORTAL</h1>
-							</div>
-						</div>
-						
-						<div class="col-lg-3" style="background-color:green;"></div>
-				</div>
-		
-				
-	
-				<div class="container">
-					<div class="row">
-							<div class="col-lg-3" style="background-color: blue;"></div>
-						<div class="col-lg-6">
-							<div class="shadow p-3 mb-5 bg-white rounded">
-								<div class="login-icon">
-									<ion-icon class="icon" name="people"></ion-icon>  
-								</div> 
-							<!-- Container for the Form-->
-							<div class="w3-container w3-panel w3-card-4 login-form">
-								<div class="intro"><h2>LOG IN TO CONTINUE</h2></div>
-									<!-- create the loggin form with an input text boxes -->
-									<form name="login" method="post" action="tenantLogin.php"> 
-										<!--The Login form should consist of fields for username, email address and a password. -->
-										<div class='form-group'>
-											
-											<legend><b>E-mail</b></legend>
-											<input type="email" class='form-control' placeholder="Enter email" name="userEmail" required>
-											
-										</div>
-									
-										<div class='form-group'>
-											
-											<legend><b>Password</b></legend>
-											<input type="password" class='form-control' placeholder="Enter Password" name="userPassWord" required>
-											
-											
-										</div>
-										
-										<div class="button-panel">
-											<button id="formButton" type="submit" class="btn btn-success">Log In</button>
-											<a id="formButton" href="index.html" class="btn btn-danger">Cancel</a>
-										</div>
-									</form>
-							</div>
+			<div class="row">
+					<div class="col-lg-3"></div>
+					<div class="col-lg-6">
+						<div class="shadow p-3 mb-5 bg-white rounded main-title mainTitle-card">
+							<h1>Welcome to TENANT PORTAL</h1>
 						</div>
 					</div>
-
-					<div class="col-lg-3" style="background-color: blue;"></div>
-				</div>
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+					<div class="col-lg-3"></div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4"></div>
+					<div class="col-lg-4">
+						<div class="shadow p-3 mb-5 bg-white rounded">
+							<div class="login-icon">
+								<ion-icon class="icon" name="people"></ion-icon>  
+							</div> 
+						<!-- Container for the Form-->
+						<div class="w3-container w3-panel w3-card-4 login-form">
+							<div class="login-cards"><h1>LOG IN TO CONTINUE</h1></div>
+								<!-- create the loggin form with an input text boxes -->
+								<form name="login" method="post" action="tenantLogin.php"> 
+									<!--The Login form should consist of fields for username, email address and a password. -->
+									<div class='form-group'>
+										<legend><b>E-mail</b></legend>
+										<input type="email" class='form-control' placeholder="Enter email" name="userEmail" required>
+									</div>
+									<div class='form-group'>
+										<legend><b>Password</b></legend>
+										<input type="password" class='form-control' placeholder="Enter Password" name="userPassWord" required>
+									</div>
+									<div class="button-panel">
+										<button id="formButton" type="submit" class="btn btn-success">Log In</button>
+										<a id="formButton" href="index.html" class="btn btn-danger">Cancel</a>
+									</div>
+								</form>
+							</div>
+						</div><!--end rounded card-->
+					</div><!--end column-6-->
+					<div class="col-lg-4"></div>
+				</div><!--end row-->
+			</div><!--end container-->
+			<div class="top-spacing"></div>
+			<div class="top-spacing"></div>
+			<div class="top-spacing"></div>
 		</main>
-		<footer>
+        <!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
+        <div class="footer-dark">
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 col-md-3 item">
+							<h2>Other Links</h2>
+							<ul>
+								<li><a href="#" alt="">link</a></li>
+								<li><a href="#" alt="">link</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-6 col-md-3 item">
+							<h2>About</h2>
+							<ul>
+								<li><a href="#">Purpose</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-6 item text">
+							<h2>Main Site Title</h2>
+							<p> sub paragraph</p>
+							<img src="assets/img/logo.png" alt="" width="155">
+						</div>
+						<!-- Bottom Footer Icons -->
+						<div class="col item social"> 
+							<a href="#"><i class="fab fa-facebook-square"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-linkedin"></i></a>
+						</div>	
+					</div> <!-- end row -->
+					<p class="copyright">StinkyBoots Studio 2018</p>
+				</div>
+			</footer>
+		</div> <!-- end <div class="footer-dark">-->
+		<!--===== END FOOTER =============-->
 
-		</footer>
-
-		        <!-- Optional JavaScript -->
+		<!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
