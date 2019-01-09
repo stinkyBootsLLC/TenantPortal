@@ -1,5 +1,6 @@
 <?php
-
+// security ?s and session monitor fuction
+// and apartment list function
 require("../utilities/utility.php");
 
 ?>
@@ -46,7 +47,7 @@ require("../utilities/utility.php");
 				<h3>Tenent Personal Information</h3>
 				
 				<!-- create the loggin form with an input text boxes -->
-				<form name="login" method="post" action="insertNewUser.php"> 
+				<form name="login" method="post" action="insertNewTenant.php"> 
 					<!--The Login form should consist of fields for username, email address and a password. -->
 					<div class="form-group">
 						First Name:<input type="text" class="form-control" placeholder="Enter your first name" name="fName" required>
@@ -60,14 +61,6 @@ require("../utilities/utility.php");
 						<!-- Questions-->
 						<?php apartments(); ?>
 					</div>
-
-
-
-
-
-
-
-
 					<div class="form-group">
 						Home Telephone:<input type="text" class="form-control" placeholder="123-456-7890" name="hPhone"
 						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$">
