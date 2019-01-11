@@ -96,8 +96,8 @@
 		} else {
 			echo "Error: adding the new tenants profile table";
 		}// end if ($db->query($sql) === TRUE) 
-		// close the connection
-		//$db->close()
+		// close the DB connection
+		mysqli_close($conn);
 
 
 		
