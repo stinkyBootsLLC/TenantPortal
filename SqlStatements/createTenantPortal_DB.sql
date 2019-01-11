@@ -9,6 +9,7 @@ use TenantPortal;
 -- create apartments table
 CREATE TABLE Apartments (
     Apartment_ID int(3) NOT NULL AUTO_INCREMENT,
+    Apt_street varchar(25),
     Apt_number varchar(4),
     Apt_City varchar(30),
     Apt_State varchar(2),
