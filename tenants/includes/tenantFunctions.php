@@ -128,4 +128,51 @@
 
     }// end validateTenantAnswer()
 
+
+
+    function displayUserProfile(){
+        // get the logged in user ID from DB
+        // Stored in the GLOBAL SESSION
+        session_start();
+        $tenantID = $_SESSION['TenantID'];
+         // connect to database
+        require("includes/dbconnect.php"); 
+        //SQL SELECT STATEMENT -- encrypt the password and MATCH
+        $sql = "SELECT TenantEmail,CONCAT(TenantFirstName,' ',TenantLastName) AS Name,TenantHomeNumber,TenantMobileNumber,
+        TenantWorkNumber,TenantAddress_FK,TenantCity_FK,TenantState_FK,TenantZip_FK,TenantAptNum_FK
+        FROM Tenants WHERE Tenant_ID = '$tenantID'";
+        // mysqli_query(connection,query,resultmode); performs a query against the database.
+         $result = mysqli_query($conn,$sql);
+        // if the record exists in DB
+        if (mysqli_num_rows($result) > 0) {
+
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+                // assign these variables to the GLOBAL Session
+                // do not display in this function
+                echo $row["TenantEmail"]."<br>"; 
+                echo $row["Name"]."<br>"; 
+                echo $row["TenantHomeNumber"]."<br>"; 
+                echo $row["TenantMobileNumber"]."<br>"; 
+                echo $row["TenantWorkNumber"]."<br>"; 
+                echo $row["AptNum"]."<br>"; 
+                echo $row["TenantCity_FK"]."<br>"; 
+                echo $row["TenantState_FK"]."<br>";
+
+                echo $row["TenantZip_FK"]."<br>"; 
+                echo $row["TenantAptNum_FK"]."<br>";
+
+            } // end while($row = mysqli_fetch_assoc($result))
+            } else {
+                // user is NOT in the database table
+                $error = "cant find infor check your sql";
+                /////////////////////////////////////////////////////////////////////////////
+                echo "<h1>".$error."</h1>";
+                // exit out of the functions or everything else witll continue to run
+                exit();
+            } // end if (mysqli_num_rows($result) > 0)
+        // close the DB connection
+        mysqli_close($conn);
+    }// end displayUserProfile
+
 ?>
