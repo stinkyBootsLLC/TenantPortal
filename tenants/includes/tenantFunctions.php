@@ -150,8 +150,8 @@
             while($row = mysqli_fetch_assoc($result)) {
                 // assign these variables to the GLOBAL Session
                 // do not display in this function
-                echo $row["TenantEmail"]."<br>"; 
                 echo $row["Name"]."<br>"; 
+                echo $row["TenantEmail"]."<br>"; 
                 echo $row["TenantHomeNumber"]."<br>"; 
                 echo $row["TenantMobileNumber"]."<br>"; 
                 echo $row["TenantWorkNumber"]."<br>"; 
