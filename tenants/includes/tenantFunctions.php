@@ -89,6 +89,8 @@
             } else {
                 echo "0 find The Users Profile Questions";
             }
+            // close the DB connection
+            mysqli_close($conn);
 
         }// end getTenantRandomQuesttion
 
