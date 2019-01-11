@@ -46,61 +46,82 @@
         <h3>Tenant Portal Application</h3>
         <p>Tenant Profile</p>
     </div> 
-<main>
+    <main>
+    <div class="container">
+        <!--Tenant Profile display here-->
+        <?php 
+            include("includes/tenantFunctions.php");
+            include("../utilities/utility.php");
+            displayUserProfile();
 
-</main>
+            
+          
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ?>
+    </div>
 
-<!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
-<div class="footer-dark">
-<footer>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-md-3 item">
-            <h2>Other Links</h2>
-            <ul>
-                <li><a href="#" alt="">link</a></li>
-                <li><a href="#" alt="">link</a></li>
-            </ul>
-        </div>
-        <div class="col-sm-6 col-md-3 item">
-            <h2>About</h2>
-            <ul>
-                <li><a href="#">Purpose</a></li>
-            </ul>
-        </div>
-        <div class="col-sm-6 item text">
-            <h2>Main Site Title</h2>
-            <p> sub paragraph</p>
-            <img src="assets/img/logo.png" alt="" width="155">
-        </div>
-        <!-- Bottom Footer Icons -->
-        <div class="col item social"> 
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>	
-    </div> <!-- end row -->
-    <p class="copyright">StinkyBoots Studio 2018</p>
-</div>
-</footer>
-</div> <!-- end <div class="footer-dark">-->
-<!--===== END FOOTER =============-->
+    </main>
+
+    <!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h2>Other Links</h2>
+                        <ul>
+                            <li><a href="#" alt="">link</a></li>
+                            <li><a href="#" alt="">link</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h2>About</h2>
+                        <ul>
+                            <li><a href="#">Purpose</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 item text">
+                        <h2>Main Site Title</h2>
+                        <p> sub paragraph</p>
+                        <img src="assets/img/logo.png" alt="" width="155">
+                    </div>
+                    <!-- Bottom Footer Icons -->
+                    <div class="col item social"> 
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>	
+                </div> <!-- end row -->
+                <p class="copyright">StinkyBoots Studio 2018</p>
+            </div>
+        </footer>
+    </div> <!-- end <div class="footer-dark">-->
+    <!--===== END FOOTER =============-->
 
 
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
 
-<!-- Reload JavaScript -->
-<script>
-// Reload page every 30 minutes
-setTimeout(function(){
-window.location.reload(1);
-}, 1800000);
-</script>
+    <!-- Reload JavaScript -->
+    <script>
+    // Reload page every 30 minutes
+    setTimeout(function(){
+    window.location.reload(1);
+    }, 1800000);
+    </script>
 </body>
 </html>
