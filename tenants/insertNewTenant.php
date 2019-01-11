@@ -36,21 +36,6 @@
 	echo 	$secAnswer2;
 	echo 	$secAnswer3;
 
-
-	// Check connection  thi is probably not needed
-	// already checking connection in dbconnect.php
-	// if ($conn->dbect_error) {
-	// 	die("connection failed: Please contact administrator");
-	// } 
-	//sanatize the data
-	// $gameusername = mysqli_real_escape_string($db,$username);
-	// $gamepassword = mysqli_real_escape_string($db,$userpass);
-	// $gamesecquest1 = mysqli_real_escape_string($db,$secquest1);
-	// $gamesecquest2 = mysqli_real_escape_string($db,$secquest2);
-	// $gamesecquest3 = mysqli_real_escape_string($db,$secquest3);
-	// $gameuserans1 = mysqli_real_escape_string($db,$secAnswer1);
-	// $gameuserans2 = mysqli_real_escape_string($db,$secAnswer2);	
-	// $gameuserans3 = mysqli_real_escape_string($db,$secAnswer3);
 	
 	// check if the username already exists
 	$sql0 = "SELECT  tenantEmail from Tenants where tenantEmail = '$email'";

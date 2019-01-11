@@ -94,16 +94,4 @@
 
         }// end getTenantRandomQuesttion
 
-
-        /**
-         *  
-         *  
-         */
-        function registerNewTenant(){
-            // connect to database
-		    require("dbconnect.php");
-
-
-        }// end registerNewTenant
-
 ?>
