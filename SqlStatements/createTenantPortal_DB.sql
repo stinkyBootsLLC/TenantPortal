@@ -95,7 +95,7 @@ CREATE TABLE MaintainerProfiles(
     Maintainer_FK int(3) NOT NULL,
     MaintainerSecQues1_FK int(3) NOT NULL,
     MaintainerSecAns1 varchar(55) NOT NULL,
-    MaintainerQues2_FK int(3) NOT NULL,
+    MaintainerSecQues2_FK int(3) NOT NULL,
     MaintainerSecAns2 varchar(55) NOT NULL,
     MaintainerSecQues3_FK int(3) NOT NULL,
     MaintainerSecAns3 varchar(55) NOT NULL,
