@@ -44,7 +44,7 @@
         <div class="card-body">
         <h5 class="card-title">Open Maint Issues</h5>
         <p class="card-text">Recently added tenant maintenance issues.</p>
-        <a href="maintOpenIssues.php" class="btn btn-primary">Button</a>
+        <a href="../maintRequests/maintOpenIssues.php" class="btn btn-primary">Button</a>
         </div>
         </div>
     
@@ -59,7 +59,7 @@
         <div class="card-body">
         <h5 class="card-title">Pending Maint Issues</h5>
         <p class="card-text">Pending issues with scheduled repair dates.</p>
-        <a href="maintPendingIssues.php" class="btn btn-primary">Button</a>
+        <a href="../maintRequests/maintPendingIssues.php" class="btn btn-primary">Button</a>
         </div>
         </div>
    
@@ -73,7 +73,7 @@
         <div class="card-body">
         <h5 class="card-title">Closed Maint Issues</h5>
         <p class="card-text">Closed issue history.</p>
-        <a href="maintClosedIssues.php" class="btn btn-primary">Button</a>
+        <a href="../maintRequests/maintClosedIssues.php" class="btn btn-primary">Button</a>
         </div>
         </div>
    
