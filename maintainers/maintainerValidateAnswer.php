@@ -7,7 +7,7 @@
  * Description: compares the users input security answer
  * to the USERS security answers in the database
 */
-	include("includes/tenantFunctions.php");
+	include("includes/maintainerFunctions.php");
 	include("../utilities/utility.php");
 	// sanitize the POST data
 	$secretAnswer = sanatizeData($_POST["answer"]);
