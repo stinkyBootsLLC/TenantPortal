@@ -87,5 +87,21 @@ CREATE TABLE Maintainers (
     MaintainerFirstName varchar(30) NOT NULL,
     MaintainerLastName  varchar(30) NOT NULL,
     MaintainerNumber varchar(12)
-)
+);
+
+-- create the Maintainer profile for login
+CREATE TABLE MaintainerProfiles(
+    MaintainerProfile_ID int(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Maintainer_FK int(3) NOT NULL,
+    MaintainerSecQues1_FK int(3) NOT NULL,
+    MaintainerSecAns1 varchar(55) NOT NULL,
+    MaintainerQues2_FK int(3) NOT NULL,
+    MaintainerSecAns2 varchar(55) NOT NULL,
+    MaintainerSecQues3_FK int(3) NOT NULL,
+    MaintainerSecAns3 varchar(55) NOT NULL,
+    Constraint Foreign Key (Maintainer_FK) references Maintainers(Maintainer_ID),
+	Constraint Foreign Key (MaintainerSecQues1_FK) references TenantSecQuestions(secQues_ID ),
+	Constraint Foreign Key (MaintainerSecQues2_FK) references TenantSecQuestions(secQues_ID ),
+    Constraint Foreign Key (MaintainerSecQues3_FK) references TenantSecQuestions(secQues_ID )
+);
 
