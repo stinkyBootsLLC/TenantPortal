@@ -31,7 +31,7 @@
         <main> 
         <div class="container">
             <?php
-                include("includes/tenantFunctions.php");
+                include("includes/maintainerFunctions.php");
                 include("../utilities/utility.php");
                 // Retrieve and sanatize Post Data
                 $userEmail= sanatizeData($_POST["userEmail"]); 
@@ -49,7 +49,7 @@
 
                 if($_SERVER["REQUEST_METHOD"] == "POST") {
                     // call function and pass variables
-                    selectTenantInfo($userEmail, $userPassWord);
+                    selectMaintInfo($userEmail, $userPassWord);
 
                 }// end if($_SERVER["REQUEST_METHOD"] == "POST")
                 } else {
