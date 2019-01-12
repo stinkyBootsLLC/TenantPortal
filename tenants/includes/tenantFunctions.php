@@ -137,11 +137,17 @@
         $tenantID = $_SESSION['TenantID'];
          // connect to database
         require("includes/dbconnect.php"); 
-        //SQL SELECT STATEMENT -- encrypt the password and MATCH
+        //SQL SELECT STATEMENT 
         $sql = "SELECT TenantEmail,CONCAT(TenantFirstName,' ',TenantLastName) AS Name,TenantHomeNumber,TenantMobileNumber,
-        TenantWorkNumber,TenantAddress_FK,TenantCity_FK,TenantState_FK,TenantZip_FK,TenantAptNum_FK
-        FROM Tenants WHERE Tenant_ID = '$tenantID'";
-        // mysqli_query(connection,query,resultmode); performs a query against the database.
+        TenantWorkNumber,addr.Apt_street AS addr,city.Apt_City AS city,t_state.Apt_State AS t_state,zip.Apt_Zip AS zip,aptNum.Apt_number AS aptnum
+        FROM Tenants 
+        JOIN Apartments addr ON Tenants.TenantAddress_FK = addr.Apartment_ID
+        JOIN Apartments city ON Tenants.TenantCity_FK = city.Apartment_ID
+        JOIN Apartments t_state ON Tenants.TenantState_FK = t_state.Apartment_ID
+        JOIN Apartments zip ON Tenants.TenantZip_FK = zip.Apartment_ID
+        JOIN Apartments aptNum ON Tenants.TenantAptNum_FK = aptNum.Apartment_ID
+        WHERE Tenant_ID = '$tenantID'";
+                // mysqli_query(connection,query,resultmode); performs a query against the database.
          $result = mysqli_query($conn,$sql);
         // if the record exists in DB
         if (mysqli_num_rows($result) > 0) {
@@ -155,12 +161,12 @@
                 echo $row["TenantHomeNumber"]."<br>"; 
                 echo $row["TenantMobileNumber"]."<br>"; 
                 echo $row["TenantWorkNumber"]."<br>"; 
-                echo $row["AptNum"]."<br>"; 
-                echo $row["TenantCity_FK"]."<br>"; 
-                echo $row["TenantState_FK"]."<br>";
+                echo $row["addr"]."<br>"; 
+                echo $row["city"]."<br>"; 
+                echo $row["t_state"]."<br>";
 
-                echo $row["TenantZip_FK"]."<br>"; 
-                echo $row["TenantAptNum_FK"]."<br>";
+                echo $row["zip"]."<br>"; 
+                echo $row["aptnum"]."<br>";
 
             } // end while($row = mysqli_fetch_assoc($result))
             } else {
