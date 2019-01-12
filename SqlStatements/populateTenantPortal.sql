@@ -69,17 +69,6 @@ VALUES ('20181225','open','Burnt LightBulb',2,2);
 INSERT INTO TenantMaintIssues(IssueReportDate ,IssueStatus ,IssueDescription,Tenant_FK ,Tenant_Apt_FK)
 VALUES ('20181225','open','Burnt LightBulb',3,3);
 
-
-
-
-
-
-
-
-
-
-
-
 -- populate TenantProfiles table
 INSERT INTO TenantProfiles(Tenant_FK,TenantSecQues1_FK,TenantSecAns1,TenantSecQues2_FK,TenantSecAns2,
     TenantSecQues3_FK,TenantSecAns3)
@@ -91,3 +80,17 @@ VALUES(2,2,password('answer'),2,password('answer'),2,password('answer'));
 INSERT INTO TenantProfiles(Tenant_FK,TenantSecQues1_FK,TenantSecAns1,TenantSecQues2_FK,TenantSecAns2,
     TenantSecQues3_FK,TenantSecAns3)
 VALUES(3,3,password('answer'),3,password('answer'),3,password('answer'));
+
+
+
+-- populate Maintainers table
+INSERT INTO Maintainers (MaintainerEmail,MaintainertPassword,MaintainerFirstName,MaintainerLastName,MaintainerNumber)
+VALUES ('maint@mail.com',password('1234'),'ed','jones','123-456-7891');
+
+-- populate MaintainerProfiles table
+INSERT INTO MaintainerProfiles (Maintainer_FK,MaintainerSecQues1_FK,MaintainerSecAns1,MaintainerSecQues2_FK,
+MaintainerSecAns2,MaintainerSecQues3_FK,MaintainerSecAns3)
+VALUES(1,2,password('answer'),2,password('answer'),2,password('answer'));
+
+
+    
