@@ -78,3 +78,14 @@ CREATE TABLE TenantProfiles(
 	Constraint Foreign Key (TenantSecQues2_FK) references TenantSecQuestions(secQues_ID ),
     Constraint Foreign Key (TenantSecQues3_FK) references TenantSecQuestions(secQues_ID )
 );
+
+-- create Maintainer table
+CREATE TABLE Maintainers (
+    Maintainer_ID int(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    MaintainerEmail varchar(30) NOT NULL,
+    MaintainertPassword varchar(55) NOT NULL,
+    MaintainerFirstName varchar(30) NOT NULL,
+    MaintainerLastName  varchar(30) NOT NULL,
+    MaintainerNumber varchar(12)
+)
+
