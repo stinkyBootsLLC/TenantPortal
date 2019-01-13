@@ -30,6 +30,11 @@
                 <a class="nav-link" href="#">Closed Issues</a>
             </li>
         </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../logout.php"><ion-icon name="power"></ion-icon>&nbsp Log-Out</a>
+            </li>
+        </ul>
     </nav>
 
     <div class="container-fluid">

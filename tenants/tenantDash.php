@@ -44,7 +44,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="logout.php"><ion-icon name="power"></ion-icon>&nbsp Log-Out</a>
             </li>
-
         </ul>
     </nav>
 
