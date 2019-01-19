@@ -49,7 +49,7 @@
              */
             // grab all the POST DATA
             /*@TODO Sanitize this data*/ 
-            $status = $_POST["status"]; 
+           
             $reportDate = $_POST["IssueReportDate"]; 
             $description = $_POST["IssueDescription"];
             $tenantName = $_POST["tenantName"]; 
@@ -70,7 +70,7 @@
             }
             
             $sql = "INSERT INTO TenantMaintIssues (IssueReportDate, IssueStatus, IssueDescription, Tenant_FK, Tenant_Apt_FK)
-            VALUES ('$reportDate', '$status','$description', '$tenantName','$aptNumber')";
+            VALUES ('$reportDate', 'open','$description', '$tenantName','$aptNumber')";
             
             if (mysqli_query($conn, $sql)) {
                 echo "New record created successfully";
