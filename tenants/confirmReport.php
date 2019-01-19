@@ -47,23 +47,17 @@
              * Purpose:
              * To report the maint issue 
              */
-            // grab all the POST DATA
-            /*@TODO Sanitize this data*/ 
-
             include("includes/tenantFunctions.php");
             include("../utilities/utility.php");
             // start the session
             session_start();
-
-            $reportDate = $_POST["IssueReportDate"]; 
-            $description = $_POST["IssueDescription"];
-            $tenantName = $_SESSION["TenantAddress_FK"]; 
-            $aptNumber = $_SESSION["TenantAddress_FK"];
-
-
+            // grab and sanitize all the POST DATA
+            $reportDate = sanatizeData($_POST["IssueReportDate"]); 
+            $description = sanatizeData($_POST["IssueDescription"]);
+            $tenantName = sanatizeData($_SESSION["TenantAddress_FK"]); 
+            $aptNumber = sanatizeData($_SESSION["TenantAddress_FK"]);
             // connect to database
             require("includes/dbconnect.php"); 
-            
             $sql = "INSERT INTO TenantMaintIssues (IssueReportDate, IssueStatus, IssueDescription, Tenant_FK, Tenant_Apt_FK)
             VALUES ('$reportDate', 'open','$description', '$tenantName','$aptNumber')";
             
