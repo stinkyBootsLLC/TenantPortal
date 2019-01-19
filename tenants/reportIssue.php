@@ -53,10 +53,8 @@
 
   
         <form action='confirmReport.php' method='POST'>
-            <div class='form-group'>
-                <label for="Status">Status:</label>
-                <input type='text' class='form-control' name='status' id='status' value="open" readonly><br>
-            </div>
+
+
 
             <div class='form-group'>
                
