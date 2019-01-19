@@ -8,8 +8,9 @@
      * @return NOTHING 
      */
     function selectMaintInfo($userEmail, $userPassWord){
+        
         // connect to database
-        require("dbconnect.php"); 
+        require("../../Tenants_variables/maint_dbconnect.php"); 
         //SQL SELECT STATEMENT -- encrypt the password and MATCH
         $sql = "SELECT Maintainer_ID,MaintainerEmail,CONCAT(MaintainerFirstName,' ',MaintainerLastName) AS Name FROM Maintainers 
         WHERE MaintainerEmail = '$userEmail' and MaintainertPassword = password('$userPassWord')";
@@ -47,11 +48,12 @@
      * and display one random question for validation
      */
     function getTenantRandomQuestion(){
+        
         // connect to database
-        require("dbconnect.php");
+        require("../../Tenants_variables/maint_dbconnect.php"); 
         session_start();
         $maint_ID = $_SESSION['Maintainer_ID'];
-        echo  $maint_ID; 
+        // echo  $maint_ID; 
         // statment 
         $sql = "SELECT Sec1.secquest AS secQuest1,Sec2.secquest AS secQuest2, Sec3.secquest AS secQuest3  
         FROM MaintainerProfiles
@@ -108,7 +110,7 @@
         session_start();
         $maint_ID = $_SESSION['Maintainer_ID'];
         // connect to database
-        require("dbconnect.php"); 
+        require("../../Tenants_variables/maint_dbconnect.php");
         // debug 
         //echo "<h3> answer = " .$secretAnswer."</h3><br>";
         //SQL SELECT STATEMENT -- Check the 3 answers
