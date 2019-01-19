@@ -57,7 +57,7 @@
             $tenantName = sanatizeData($_SESSION["TenantAddress_FK"]); 
             $aptNumber = sanatizeData($_SESSION["TenantAddress_FK"]);
             // connect to database
-            require("includes/dbconnect.php"); 
+            require("../../Tenants_variables/tenant_dbconnect.php");
             $sql = "INSERT INTO TenantMaintIssues (IssueReportDate, IssueStatus, IssueDescription, Tenant_FK, Tenant_Apt_FK)
             VALUES ('$reportDate', 'open','$description', '$tenantName','$aptNumber')";
             
