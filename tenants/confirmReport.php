@@ -66,7 +66,8 @@
                 // redirect back to dash
                 header('Refresh: 2; URL = tenantDash.php');
             } else {
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                echo "Error: contact admin -- ec-69";
+                mysqli_close($conn);
             }
             
             mysqli_close($conn);
