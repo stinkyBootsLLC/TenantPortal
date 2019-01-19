@@ -25,24 +25,12 @@
     $name = $_POST["tenantName"];
     $aptNumber = $_POST["aptNumber"];
 
-
-    // connect to the database
-    $servername = "localhost";
-    $username = "tenant_owner";
-    $password = "owner4TenantPortal";
-    $dbname = "TenantPortal";
-
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    // connect to database
+    require("../../Tenants_variables/maint_dbconnect.php");
 
     $sql = "UPDATE TenantMaintIssues SET IssuePriority='$priority',IssueStatus='$status', IssueSolution='$solution',
     IssueRepairDate='$repairDate',ScheduledDate='$scheduleDate',IssueRepairPrice='$price'
     WHERE TenantMaintIssue_ID=$issueID ";
-
 
     if (mysqli_query($conn, $sql)) {
         echo "Record updated successfully";
@@ -53,9 +41,6 @@
     }
 
     mysqli_close($conn);
-
-
-
 
 ?>
 
