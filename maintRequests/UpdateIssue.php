@@ -107,7 +107,7 @@
                 // description field
                 echo "<div class='form-group'>";
                 echo "<label for='Description'>Description:</label>";
-                echo "<textarea  class='form-control' name='IssueDescription'rows='2' cols='33' id='Description'>".$IssueDescription."</textarea>";
+                echo "<textarea  class='form-control' name='IssueDescription'rows='2' cols='33' id='Description' readonly>".$IssueDescription."</textarea>";
                 echo "</div> ";
                 // solution field
                 echo "<div class='form-group'>";
