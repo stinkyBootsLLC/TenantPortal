@@ -23,7 +23,7 @@
             $expireAfterSeconds = $expireAfter * 1;
             if($secondsInactive >= $expireAfterSeconds){
                 // logout the user
-                header('Refresh: 0; URL = logout.php');
+                header('Refresh: 0; URL = ../logout.php');
             }
         }// end if
     }// end monitorSession()
