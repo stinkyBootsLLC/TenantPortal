@@ -35,7 +35,7 @@
 	function registerQuestions(){
 		echo "register questions";
 		// connect to database
-		require("../tenants/includes/dbconnect.php");
+		require("../../Tenants_variables/tenant_dbconnect.php");
 
 		// sql 
 		$sql = "SELECT * FROM TenantSecQuestions";
@@ -63,7 +63,7 @@
 	function apartments(){
 		echo "register questions";
 		// connect to database
-		require("../tenants/includes/dbconnect.php");
+		require("../../Tenants_variables/tenant_dbconnect.php");
 
 		// sql 
 		$sql = "SELECT * FROM Apartments";
