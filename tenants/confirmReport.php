@@ -49,8 +49,11 @@
              */
             // grab all the POST DATA
             /*@TODO Sanitize this data*/ 
-           // start the session
-           session_start();
+
+            include("includes/tenantFunctions.php");
+            include("../utilities/utility.php");
+            // start the session
+            session_start();
 
             $reportDate = $_POST["IssueReportDate"]; 
             $description = $_POST["IssueDescription"];
@@ -59,17 +62,7 @@
 
 
             // connect to database
-            $servername = "localhost";
-            $username = "tenant_user";
-            $password = "user4TenantPortal";
-            $dbname = "TenantPortal";
-            
-            // Create connection
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
-            // Check connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
+            require("includes/dbconnect.php"); 
             
             $sql = "INSERT INTO TenantMaintIssues (IssueReportDate, IssueStatus, IssueDescription, Tenant_FK, Tenant_Apt_FK)
             VALUES ('$reportDate', 'open','$description', '$tenantName','$aptNumber')";
