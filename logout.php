@@ -7,11 +7,17 @@
 	and will redirect back to index.html "login form"
 */
    session_start();
-   // clear the session variables
+   // clear the session individual variables
    unset($_SESSION['TenantID']); 
    unset($_SESSION['TenantEmail']); 
    unset($_SESSION['TenantName']); 
    unset($_SESSION['TenantAddress_FK']);
+   unset($_SESSION['app_pass']);
+   unset($_SESSION['app_userEmail']);
+   unset($_SESSION['start_activity']);
+   unset($_SESSION['Maintainer_ID']); 
+   unset($_SESSION['MaintainerEmail']);
+   unset($_SESSION['MaintName']);
 
    // display message
    echo 'You have cleaned your session and Logged out';
