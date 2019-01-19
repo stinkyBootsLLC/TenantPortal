@@ -9,7 +9,7 @@
      */
     function selectTenantInfo($userEmail, $userPassWord){
         // connect to database
-        require("dbconnect.php"); 
+        require("../../Tenants_variables/tenant_dbconnect.php");
         //SQL SELECT STATEMENT -- encrypt the password and MATCH
         $sql = "SELECT Tenant_ID,TenantEmail,CONCAT(TenantFirstName,' ',TenantLastName) AS Name,TenantAddress_FK FROM Tenants 
         WHERE TenantEmail = '$userEmail' and TenantPassword = password('$userPassWord')";
@@ -48,7 +48,7 @@
      */
     function getTenantRandomQuestion(){
         // connect to database
-        require("dbconnect.php");
+        require("../../Tenants_variables/tenant_dbconnect.php");
         session_start();
         $tenantID = $_SESSION['TenantID'];
         // statment 
@@ -107,7 +107,7 @@
         session_start();
         $tenantID = $_SESSION['TenantID'];
         // connect to database
-        require("dbconnect.php"); 
+        require("../../Tenants_variables/tenant_dbconnect.php"); 
         // debug 
         //echo "<h3> answer = " .$secretAnswer."</h3><br>";
         //SQL SELECT STATEMENT -- Check the 3 answers
@@ -136,7 +136,7 @@
         session_start();
         $tenantID = $_SESSION['TenantID'];
          // connect to database
-        require("includes/dbconnect.php"); 
+         require("../../Tenants_variables/tenant_dbconnect.php");
         //SQL SELECT STATEMENT 
         $sql = "SELECT TenantEmail,CONCAT(TenantFirstName,' ',TenantLastName) AS Name,TenantHomeNumber,TenantMobileNumber,
         TenantWorkNumber,addr.Apt_street AS addr,city.Apt_City AS city,t_state.Apt_State AS t_state,zip.Apt_Zip AS zip,aptNum.Apt_number AS aptnum
