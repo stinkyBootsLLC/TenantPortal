@@ -7,25 +7,15 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <title>Tenant Portal 2019</title>
-
+        <!--@TODDO move this style to main sheet-->
         <style>
             body {background-color: rgb(234, 234, 225);}
-
-        
         </style>
-
-
-
     </head>
   <body>
-
-
-
- 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="#">Tenant Portal</a>
-
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -46,54 +36,28 @@
         <h3>Tenant Portal Application (BETA VER.1.0)</h3>
         <p>Report Maintenace issue</p>
     </div>
-<main>  
-    <div class="container">
-    <div class="shadow p-3 mb-5 bg-white rounded">
- 
-
-  
-        <form action='confirmReport.php' method='POST'>
-
-
-
-            <div class='form-group'>
-               
-                <?php 
-                    $today = date("Y-m-d");
-                    echo "Reported:<input type='date' class='form-control' id='IssueReportDate' name='IssueReportDate' value=".$today." readonly>";
-                ?>
+    <main>  
+        <div class="container">
+            <div class="shadow p-3 mb-5 bg-white rounded"> 
+                <form action='confirmReport.php' method='POST'>
+                    <div class='form-group'>
+                        <?php 
+                            $today = date("Y-m-d");
+                            echo "Reported:<input type='date' class='form-control' id='IssueReportDate' name='IssueReportDate' 
+                            value=".$today." readonly>";
+                        ?>
+                    </div>
+                    <div class='form-group'>
+                        <label for='Description'>Description:</label>
+                        <textarea  class='form-control' name='IssueDescription'rows='2' cols='33' id='Description' 
+                        placeholder="Describe the problem here..."></textarea>
+                    </div> 
+                    <input class='btn btn-success' type='submit' value='Report'>
+                    <a id="formButton" href="tenantDash.php" class="btn btn-danger">Cancel</a>
+                </form>
             </div>
-           
-
-            <div class='form-group'>
-            <label for='Description'>Description:</label>
-            <textarea  class='form-control' name='IssueDescription'rows='2' cols='33' id='Description' placeholder="Describe the problem here..."></textarea>
-            </div> 
-
-
-            <div class='form-group'>
-            <label for='Tenant Name'>Tenant Name:</label>
-            <input type='text' class='form-control' name='tenantName' id='Tenant Name' value=" "><br>
-            </div>
-            <div class='form-group'>
-            <label for='TenantApt'>Tenant Apt Number:</label>
-            <input type='text'  class='form-control' name='aptNumber' id='TenantApt' value=" "><br>
-            </div>
-
-            <input class='btn btn-success' type='submit' value='Report'>
-            <a id="formButton" href="tenantDash.php" class="btn btn-danger">Cancel</a>
-
-
-        </form>
-
         </div>
-     
-    </div>
-</main>  
-
-
-
-
+    </main>  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
