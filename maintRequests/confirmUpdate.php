@@ -35,7 +35,7 @@
     if (mysqli_query($conn, $sql)) {
         echo "Record updated successfully";
        
-        header("Refresh:3; url=maintDash.php");
+        header("Refresh:3; url=../maintainers/maintDash.php");
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
