@@ -49,11 +49,13 @@
              */
             // grab all the POST DATA
             /*@TODO Sanitize this data*/ 
-           
+           // start the session
+           session_start();
+
             $reportDate = $_POST["IssueReportDate"]; 
             $description = $_POST["IssueDescription"];
-            $tenantName = $_POST["tenantName"]; 
-            $aptNumber = $_POST["aptNumber"];
+            $tenantName = $_SESSION["TenantAddress_FK"]; 
+            $aptNumber = $_SESSION["TenantAddress_FK"];
 
 
             // connect to database
