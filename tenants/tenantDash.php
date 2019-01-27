@@ -63,7 +63,7 @@
                 echo "<h3> Welcome Back- " .$_SESSION['app_userEmail']."<br>";
 
                 echo "<p><b>Current Time</b> = ".$mySession." <b>Session Start time</b> = ".date('H:i:s', $startTime)."</p>";
-                echo "<p>User will be logged out after 30 minutes of inactivity</p>";
+                echo "<p>User will be logged out after 30 minutes</p>";
             
                 // start to monitor the session
                 if(isset($_SESSION['app_userEmail'])){
