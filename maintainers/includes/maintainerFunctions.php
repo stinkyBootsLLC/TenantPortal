@@ -8,7 +8,7 @@
      * @return NOTHING 
      */
     function selectMaintInfo($userEmail, $userPassWord){
-        
+        // parameters are already sanitized at this point
         // connect to database
         require("../../Tenants_variables/maint_dbconnect.php"); 
         //SQL SELECT STATEMENT -- encrypt the password and MATCH
@@ -26,8 +26,7 @@
                 // do not display in this function
                 $_SESSION['Maintainer_ID'] = $row["Maintainer_ID"]; 
                 $_SESSION['MaintainerEmail'] = $row["MaintainerEmail"]; 
-                $_SESSION['MaintName'] = $row["Name"]; 
-               
+                $_SESSION['MaintName'] = $row["Name"];  
             } // end while($row = mysqli_fetch_assoc($result))
             } else {
                 // user is NOT in the database table
@@ -105,6 +104,7 @@
      * @return NOTHING 
      */
     function validateTenantAnswer($secretAnswer){
+        // parameters are already sanitized at this point
         // get the logged in user ID from DB
         // Stored in the GLOBAL SESSION
         session_start();
