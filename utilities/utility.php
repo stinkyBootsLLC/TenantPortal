@@ -7,7 +7,8 @@
      */
     function sanatizeData($data){
         $escapeData = mysql_escape_string( trim($data) );
-        $cleanData = htmlspecialchars($escapeData);
+		$specCharData = htmlspecialchars($escapeData);
+		$cleanData = str_replace(array(':', '-', '/', '*','=','?'), '', $specCharData);
         return $cleanData;
     }// end sanatize data
 

@@ -62,8 +62,10 @@
              * Purpose:
              * To update the maint issue by ID
              */
+            include("../utilities/utility.php");
                 // get the the id
-                $issueID = $_GET["id"]; 
+                $issueID = sanatizeData($_GET["id"]); 
+
                 // connect to the database
                 require("../../Tenants_variables/maint_dbconnect.php");
                 // select and display everything in the TenantMaintIssues Table
