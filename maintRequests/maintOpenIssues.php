@@ -61,21 +61,9 @@
              * Purpose:
              * To display the open issues to the Landlord and Maintenace
              */
-
             // connect to the database
-            $servername = "localhost";
-            $username = "tenant_owner";
-            $password = "owner4TenantPortal";
-            $dbname = "TenantPortal";
-            // Create connection
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
-            // Check connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
+            require("../../Tenants_variables/maint_dbconnect.php");
             // select and display everything in the TenantMaintIssues Table
-
-
             $sql = "SELECT TenantMaintIssue_ID AS ID,IssueReportDate,IssuePriority,IssueStatus,IssueDescription,IssueSolution,IssueRepairDate,ScheduledDate,
             CONCAT(tenantFname.TenantFirstName,' ',tenantLname.TenantLastName) AS Name,
             tenantApt.Apt_number AS aptNumber
