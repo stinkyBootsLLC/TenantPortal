@@ -10,20 +10,20 @@
  * To update the maint issue in the database
  */
 
-
+    include("../utilities/utility.php");
     // grab all the POST DATA
     /*@TODO Sanitize this data*/ 
-    $issueID = $_POST["id"]; 
-    $reportDate = $_POST["IssueReportDate"]; 
-    $priority = $_POST["IssuePriority"];
-    $status = $_POST["IssueStatus"];
-    $description = $_POST["IssueDescription"];
-    $solution = $_POST["IssueSolution"];
-    $repairDate = $_POST["IssueRepairDate"];
-    $scheduleDate = $_POST["ScheduledDate"]; 
-    $price = $_POST["IssueRepairPrice"];
-    $name = $_POST["tenantName"];
-    $aptNumber = $_POST["aptNumber"];
+    $issueID = sanatizeData($_POST["id"]); 
+    $reportDate = sanatizeData($_POST["IssueReportDate"]);  
+    $priority = sanatizeData($_POST["IssuePriority"]); 
+    $status = sanatizeData($_POST["IssueStatus"]); 
+    $description = sanatizeData($_POST["IssueDescription"]); 
+    $solution = sanatizeData($_POST["IssueSolution"]); 
+    $repairDate = sanatizeData($_POST["IssueRepairDate"]); 
+    $scheduleDate = sanatizeData($_POST["ScheduledDate"]);  
+    $price = sanatizeData($_POST["IssueRepairPrice"]); 
+    $name = sanatizeData($_POST["tenantName"]); 
+    $aptNumber = sanatizeData($_POST["aptNumber"]); 
 
     // connect to database
     require("../../Tenants_variables/maint_dbconnect.php");
