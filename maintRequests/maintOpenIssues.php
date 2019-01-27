@@ -71,7 +71,7 @@
             JOIN Tenants tenantFname ON TenantMaintIssues.Tenant_FK = tenantFname.Tenant_ID
             JOIN Tenants tenantLname ON TenantMaintIssues.Tenant_FK = tenantLname.Tenant_ID
             JOIN Apartments tenantApt ON TenantMaintIssues.Tenant_Apt_FK = tenantApt.Apartment_ID
-            WHERE IssueStatus='open' ORDER BY IssueReportDate DESC";
+            WHERE IssueStatus='open' ORDER BY IssueReportDate ASC";
 
             $result = mysqli_query($conn, $sql);
 
