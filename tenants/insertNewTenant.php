@@ -9,7 +9,7 @@
 	// apartment list function and sanatize Data ()
 	require("../utilities/utility.php");
 	// connect to the db
-	require("includes/dbconnect.php");
+	require("../../Tenants_variables/tenant_dbconnect.php");
     // Retrieve Post Data from the registrant
     $fName = sanatizeData($_POST["fName"]);
     $lName = sanatizeData($_POST["lName"]);
@@ -59,7 +59,7 @@
 			if ($conn->query($sql2) === TRUE) {
 				echo "New tenant profile record created successfully";
 				// redirect back to login form
-				header('Refresh: 1; URL = _index.html');
+				header('Refresh: 1; URL = index.html');
 			} else {
 				echo "Error: adding the new tenants profile table";
 				// future  redirect out of this page or add some sort 
