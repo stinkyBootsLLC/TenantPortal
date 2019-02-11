@@ -54,8 +54,8 @@
             // grab and sanitize all the POST DATA
             $reportDate = sanatizeData($_POST["IssueReportDate"]); 
             $description = sanatizeData($_POST["IssueDescription"]);
-            $tenantName = sanatizeData($_SESSION["TenantAddress_FK"]); 
-            $aptNumber = sanatizeData($_SESSION["TenantAddress_FK"]);
+            $tenantName = sanatizeData($_SESSION["TenantID"]); 
+            $aptNumber = sanatizeData($_SESSION["TenantID"]);
             // connect to database
             require("../../Tenants_variables/tenant_dbconnect.php");
             $sql = "INSERT INTO TenantMaintIssues (IssueReportDate, IssueStatus, IssueDescription, Tenant_FK, Tenant_Apt_FK)
@@ -69,15 +69,10 @@
                 echo "Error: contact admin -- ec-69";
                 mysqli_close($conn);
             }
-            
             mysqli_close($conn);
          
         ?>
     </div>
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
