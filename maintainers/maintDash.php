@@ -61,7 +61,6 @@
         <main>
             <div style="width:50%; margin-left:1in; padding: 10px;">
                 <?php
-                    include("includes/tenantFunctions.php");
                     include("../utilities/utility.php");
                     $startTime = $_SESSION['start_activity'];// capture the session start time
                     // Display the GLOBAL Session information 
