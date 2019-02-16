@@ -59,18 +59,31 @@
         </div> 
 
         <main>
-            <div style="width:50%; margin-left:1in; padding: 10px;">
+            <div class="container">
                 <?php
                     include("../utilities/utility.php");
                     $startTime = $_SESSION['start_activity'];// capture the session start time
-                    // Display the GLOBAL Session information 
+                    // Display the GLOBAL Session information
+                    
+                    echo"<div class='shadow p-3 mb-5 bg-white rounded'>";
+                    echo"<div class='card w-100'>";
+                    echo"<div class='card-body'>";
+
                     echo "<h2>Session Data</h2>";
                     // After login, a personal welcome message should appear
                     echo "<h3> Welcome Back- " .$_SESSION['app_userEmail']."<br>";
 
                     echo "<p><b>Current Time</b> = ".$mySession." <b>Session Start time</b> = ".date('H:i:s', $startTime)."</p>";
                     echo "<p>User will be logged out after 30 minutes</p>";
+
+                    echo "</div>"; 
+                    echo "</div>";
+                    echo "</div";
+                    
                 
+
+
+
                     // start to monitor the session
                     if(isset($_SESSION['app_userEmail'])){
                         // monitor the session
