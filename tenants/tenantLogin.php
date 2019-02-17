@@ -33,18 +33,20 @@
             <?php
                 include("includes/tenantFunctions.php");
                 include("../utilities/utility.php");
+                // max session time
+                ini_set('session.gc_maxlifetime', 1800000); //30 min
+                // Set the session information  
+                // PHP session default time = 30min
+                session_start();
                 // Retrieve and sanatize Post Data
                 $userEmail= sanatizeData($_POST["userEmail"]); 
                 $userPassWord = sanatizeData($_POST["userPassWord"]); 
                 // protect blank empty entries
                 if (!empty($userEmail) && !empty($userPassWord)) {
-                // Set the session information  
-                // PHP session default time = 30min
-                session_start();
+
                 $_SESSION['app_userEmail'] = sanatizeData($userEmail); 
                 $_SESSION['app_pass'] = sanatizeData($userPassWord);
-                // max session time
-                ini_set('session.gc_maxlifetime', 1800000); //30 min
+
                 $_SESSION['start_activity'] = time();
 
                 if($_SERVER["REQUEST_METHOD"] == "POST") {
