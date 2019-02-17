@@ -110,7 +110,7 @@
                 echo "</select>"; 
                 echo "Status: <select name='IssueStatus'>";
                 echo "<option value=".$IssueStatus.">".$IssueStatus."</option>";
-                echo "<option value='open'>open</option>";
+             
                 echo "<option value='pending'>pending</option>";
                 echo "<option value='closed'>closed</option>";
                 echo "</select><br>"; 
