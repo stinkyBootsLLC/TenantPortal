@@ -19,7 +19,7 @@
         // if the record exists in DB
         if (mysqli_num_rows($result) > 0) {
             // start the session
-            session_start();
+           // session_start();
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
                 // assign these variables to the GLOBAL Session
@@ -50,7 +50,7 @@
         
         // connect to database
         require("../../Tenants_variables/maint_dbconnect.php"); 
-        session_start();
+       // session_start();
         $maint_ID = $_SESSION['Maintainer_ID'];
         // echo  $maint_ID; 
         // statment 
