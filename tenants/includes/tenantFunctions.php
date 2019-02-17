@@ -18,7 +18,7 @@
         // if the record exists in DB
         if (mysqli_num_rows($result) > 0) {
             // start the session
-            session_start();
+          //  session_start();
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
                 // assign these variables to the GLOBAL Session
@@ -49,7 +49,7 @@
     function getTenantRandomQuestion(){
         // connect to database
         require("../../Tenants_variables/tenant_dbconnect.php");
-        session_start();
+     //   session_start();
         $tenantID = $_SESSION['TenantID'];
         // statment 
         $sql = "SELECT Sec1.secquest AS secQuest1,Sec2.secquest AS secQuest2, Sec3.secquest AS secQuest3  
