@@ -52,19 +52,23 @@
         <p>Tenant Dashboard</p>
     </div> 
     <main>
-        <div style="width:50%; margin-left:1in; padding: 10px;">
+        <div class="container">
             <?php
-                include("includes/tenantFunctions.php");
                 include("../utilities/utility.php");
                 $startTime = $_SESSION['start_activity'];// capture the session start time
-                // Display the GLOBAL Session information 
-                echo "<h2>Session Data</h2>";
-                // After login, a personal welcome message should appear
-                echo "<h3> Welcome Back- " .$_SESSION['app_userEmail']."<br>";
-
-                echo "<p><b>Current Time</b> = ".$mySession." <b>Session Start time</b> = ".date('H:i:s', $startTime)."</p>";
-                echo "<p>User will be logged out after 30 minutes</p>";
-            
+                // Display the GLOBAL Session information
+                
+                echo"<div class='shadow p-3 mb-5 bg-white rounded'>";
+                    echo"<div class='card w-100'>";
+                        echo"<div class='card-body'>";
+                            echo "<h2>Session Data</h2>";
+                            // After login, a personal welcome message should appear
+                            echo "<h3> Welcome Back- " .$_SESSION['app_userEmail']."<br>";
+                            echo "<p><b>Current Time</b> = ".$mySession." <b>Session Start time</b> = ".date('H:i:s', $startTime)."</p>";
+                            echo "<p>User will be logged out after 30 minutes</p>";
+                        echo "</div>"; 
+                    echo "</div>";
+                echo "</div";
                 // start to monitor the session
                 if(isset($_SESSION['app_userEmail'])){
                     // monitor the session
@@ -73,36 +77,42 @@
             ?>
         </div>
         <div class="container">
-            <!--area 1-->
-            <div class="shadow p-3 mb-5 bg-white rounded">
-                <div class="card w-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Report Maintenance Issue</h5>
-                        <p class="card-text">Submit a maintenance issue for repair.</p>
-                        <a href="reportIssue.php" class="btn btn-primary">Go</a>
+            <div class="row">
+                <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div class="shadow p-3 mb-5 bg-white rounded">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Report Maintenance Issue</h5>
+                                <p class="card-text">Submit a maintenance issue for repair.</p>
+                                <a href="reportIssue.php" class="btn btn-primary">Go</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--area 2-->   
-            <div class="shadow p-3 mb-5 bg-white rounded">
-                <div class="card w-100">
-                    <div class="card-body">
-                        <h5 class="card-title">My Pending Maint Issues</h5>
-                        <p class="card-text">Pending issues with scheduled repair dates.</p>
-                        <a href="#" class="btn btn-primary">Button</a>
+                <div class="col-lg-4 col-md-8 col-sm-10">   
+                    <div class="shadow p-3 mb-5 bg-white rounded">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <h5 class="card-title">My Pending Maint Issues</h5>
+                                <p class="card-text">Pending issues with scheduled repair dates.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--area 3-->
-            <div class="shadow p-3 mb-5 bg-white rounded">
-                <div class="card w-100">
-                    <div class="card-body">
-                        <h5 class="card-title">My Closed Maint Issues</h5>
-                        <p class="card-text">Closed issue history.</p>
-                        <a href="#" class="btn btn-primary">Button</a>
+                <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div class="shadow p-3 mb-5 bg-white rounded">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <h5 class="card-title">My Closed Maint Issues</h5>
+                                <p class="card-text">Closed issue history.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-        </div> <!--end class="container"-->
+            </div> <!--end class="row"-->
+        </div><!--end class="container"-->
     </main>
 
     <!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
