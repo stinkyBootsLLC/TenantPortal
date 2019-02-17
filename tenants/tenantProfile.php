@@ -51,20 +51,7 @@
         <?php 
             include("includes/tenantFunctions.php");
             include("../utilities/utility.php");
-            displayUserProfile();
-
-            
-          
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            displayUserProfile();    
         ?>
     </div>
 

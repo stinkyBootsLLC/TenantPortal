@@ -151,24 +151,28 @@
          $result = mysqli_query($conn,$sql);
         // if the record exists in DB
         if (mysqli_num_rows($result) > 0) {
-
+            echo"<div class='shadow p-3 mb-5 bg-white rounded'>";
+            echo"<div class='card w-100'>";
+            echo"<div class='card-body'>";
+            echo "<h2>My Profile</h2>";
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
                 // assign these variables to the GLOBAL Session
                 // do not display in this function
-                echo $row["Name"]."<br>"; 
-                echo $row["TenantEmail"]."<br>"; 
-                echo $row["TenantHomeNumber"]."<br>"; 
-                echo $row["TenantMobileNumber"]."<br>"; 
-                echo $row["TenantWorkNumber"]."<br>"; 
-                echo $row["addr"]."<br>"; 
-                echo $row["city"]."<br>"; 
-                echo $row["t_state"]."<br>";
-
-                echo $row["zip"]."<br>"; 
-                echo $row["aptnum"]."<br>";
-
+                echo "<strong>Name:</strong> ".$row["Name"]."<br>"; 
+                echo "<strong>Email:</strong> ".$row["TenantEmail"]."<br>"; 
+                echo "<strong>Home Telephone #:</strong> ".$row["TenantHomeNumber"]."<br>"; 
+                echo "<strong>Mobile Telephone #:</strong> ".$row["TenantMobileNumber"]."<br>"; 
+                echo "<strong>Work Telephone #:</strong> ".$row["TenantWorkNumber"]."<br>"; 
+                echo "<strong>Address:</strong> ".$row["addr"]."<br>"; 
+                echo "<strong>City:</strong> ".$row["city"]."<br>"; 
+                echo "<strong>State:</strong> ".$row["t_state"]."<br>";
+                echo "<strong>Zip:</strong> ".$row["zip"]."<br>"; 
+                echo "<strong>Apt #:</strong> ".$row["aptnum"]."<br>";
             } // end while($row = mysqli_fetch_assoc($result))
+            echo "</div>"; 
+            echo "</div>";
+            echo "</div";
             } else {
                 // user is NOT in the database table
                 $error = "cant find infor check your sql";
