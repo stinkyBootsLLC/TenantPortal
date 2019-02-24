@@ -137,7 +137,7 @@
                             <div class="col-sm-6 item text">
                                 <h2>Tenant Portal Web Application</h2>
                                 <p>Prototype - tenant / landlord maintenance issue reporting system</p>
-                                <img src="assets/img/logo.png" alt="" width="155">
+                                 
                             </div>
                             <!-- Bottom Footer Icons -->
                             <div class="col item social"> 
