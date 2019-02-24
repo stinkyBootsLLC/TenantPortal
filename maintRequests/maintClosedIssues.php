@@ -62,11 +62,12 @@
              * Purpose:
              * To display the open and Pending issues to the Landlord and Maintenace
              */
-            // connect to the database
-            require("../../Tenants_variables/maint_dbconnect.php");
+
             session_start();
+            // user session MUST be SET
             if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
-                // user session MUST be SET
+                // connect to the database
+                require("../../Tenants_variables/maint_dbconnect.php");
                 // select and display everything in the TenantMaintIssues Table
                 $sql = "SELECT IssueReportDate,IssuePriority,IssueStatus,IssueDescription,IssueSolution,IssueRepairDate,ScheduledDate,
                 IssueRepairPrice,CONCAT(tenantFname.TenantFirstName,' ',tenantLname.TenantLastName) AS Name,

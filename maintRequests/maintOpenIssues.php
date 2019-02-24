@@ -61,56 +61,62 @@
              * Purpose:
              * To display the open issues to the Landlord and Maintenace
              */
-            // connect to the database
-            require("../../Tenants_variables/maint_dbconnect.php");
-            // select and display everything in the TenantMaintIssues Table
-            $sql = "SELECT TenantMaintIssue_ID AS ID,IssueReportDate,IssuePriority,IssueStatus,IssueDescription,IssueSolution,IssueRepairDate,ScheduledDate,
-            CONCAT(tenantFname.TenantFirstName,' ',tenantLname.TenantLastName) AS Name,
-            tenantApt.Apt_number AS aptNumber
-            FROM TenantMaintIssues 
-            JOIN Tenants tenantFname ON TenantMaintIssues.Tenant_FK = tenantFname.Tenant_ID
-            JOIN Tenants tenantLname ON TenantMaintIssues.Tenant_FK = tenantLname.Tenant_ID
-            JOIN Apartments tenantApt ON TenantMaintIssues.Tenant_Apt_FK = tenantApt.Apartment_ID
-            WHERE IssueStatus='open' ORDER BY IssueReportDate ASC";
+            session_start();
+            // user session MUST be SET
+            if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
+                // connect to the database
+                require("../../Tenants_variables/maint_dbconnect.php");
+                // select and display everything in the TenantMaintIssues Table
+                $sql = "SELECT TenantMaintIssue_ID AS ID,IssueReportDate,IssuePriority,IssueStatus,IssueDescription,IssueSolution,IssueRepairDate,ScheduledDate,
+                CONCAT(tenantFname.TenantFirstName,' ',tenantLname.TenantLastName) AS Name,
+                tenantApt.Apt_number AS aptNumber
+                FROM TenantMaintIssues 
+                JOIN Tenants tenantFname ON TenantMaintIssues.Tenant_FK = tenantFname.Tenant_ID
+                JOIN Tenants tenantLname ON TenantMaintIssues.Tenant_FK = tenantLname.Tenant_ID
+                JOIN Apartments tenantApt ON TenantMaintIssues.Tenant_Apt_FK = tenantApt.Apartment_ID
+                WHERE IssueStatus='open' ORDER BY IssueReportDate ASC";
 
-            $result = mysqli_query($conn, $sql);
+                $result = mysqli_query($conn, $sql);
 
-            if (mysqli_num_rows($result) > 0) {
-                
-                // make the table
-                echo "<table class='table table-bordered'>";
-                echo "<thead class='thead-dark'>";
-                echo "<tr>";
-                echo "<th>ID</th>";
-                echo "<th>Reported Date</th>";
-                echo "<th>Status</th>";
-                echo "<th>Description</th>";
-                echo "<th>Tenant</th>"; 
-                echo "<th>APT NUM</th>";
-                echo "<th>Update</th>";
-                echo "</tr>";
-            
-                // output data of each row
-                while($row = mysqli_fetch_assoc($result)) {
+                if (mysqli_num_rows($result) > 0) {
+                    
+                    // make the table
+                    echo "<table class='table table-bordered'>";
+                    echo "<thead class='thead-dark'>";
                     echo "<tr>";
-                    echo "<form action='UpdateIssue.php' method='GET'>";
-                    echo "<td><input type='text' name='id' value=".$row['ID']." readonly></td>";
-                    echo "<td>".$row["IssueReportDate"]."</td>"; 
-                    echo "<td>".$row["IssueStatus"].  "</td>"; 
-                    echo "<td>".$row["IssueDescription"]."</td>"; 
-                    echo "<td>".$row["Name"]."</td>"; 
-                    echo "<td>".$row["aptNumber"]."</td>";  
-                    echo "<td> <input type='submit' value='UPDATE'></td>"; 
-                    echo "</form>"; 
-                    echo "</tr>";   
-                } // end while  ($row = mysqli_fetch_assoc($result))
-                echo "</table>"; // close the table  
-            } else {
-                echo "0 Open issues found";
-            } // end if (mysqli_num_rows($result) > 0)
+                    echo "<th>ID</th>";
+                    echo "<th>Reported Date</th>";
+                    echo "<th>Status</th>";
+                    echo "<th>Description</th>";
+                    echo "<th>Tenant</th>"; 
+                    echo "<th>APT NUM</th>";
+                    echo "<th>Update</th>";
+                    echo "</tr>";
+                
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<form action='UpdateIssue.php' method='GET'>";
+                        echo "<td><input type='text' name='id' value=".$row['ID']." readonly></td>";
+                        echo "<td>".$row["IssueReportDate"]."</td>"; 
+                        echo "<td>".$row["IssueStatus"].  "</td>"; 
+                        echo "<td>".$row["IssueDescription"]."</td>"; 
+                        echo "<td>".$row["Name"]."</td>"; 
+                        echo "<td>".$row["aptNumber"]."</td>";  
+                        echo "<td> <input type='submit' value='UPDATE'></td>"; 
+                        echo "</form>"; 
+                        echo "</tr>";   
+                    } // end while  ($row = mysqli_fetch_assoc($result))
+                    echo "</table>"; // close the table  
+                } else {
+                    echo "0 Open issues found";
+                } // end if (mysqli_num_rows($result) > 0)
 
-            // close the DB connection
-            mysqli_close($conn);
+                // close the DB connection
+                mysqli_close($conn);
+            } else { 
+                echo "<h5>User Is Not Logged-In</h5>"; 
+            }// end if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass']))
         ?>
 
     </div> 
