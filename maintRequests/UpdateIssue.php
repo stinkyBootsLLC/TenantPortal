@@ -63,9 +63,11 @@
              * To update the maint issue by ID
              */
             include("../utilities/utility.php");
-                // get the the id
-                $issueID = sanatizeData($_GET["id"]); 
-
+            // get the the id
+            $issueID = sanatizeData($_GET["id"]); 
+            session_start();
+            // user session MUST be SET
+            if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
                 // connect to the database
                 require("../../Tenants_variables/maint_dbconnect.php");
                 // select and display everything in the TenantMaintIssues Table
@@ -110,7 +112,7 @@
                 echo "</select>"; 
                 echo "Status: <select name='IssueStatus'>";
                 echo "<option value=".$IssueStatus.">".$IssueStatus."</option>";
-             
+            
                 echo "<option value='pending'>pending</option>";
                 echo "<option value='closed'>closed</option>";
                 echo "</select><br>"; 
@@ -154,6 +156,9 @@
                 
                 // close the DB connection
                 mysqli_close($conn);
+            } else { 
+                echo "<h5>User Is Not Logged-In</h5>"; 
+            }// end if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass']))
         ?>
     </div>
 
