@@ -56,52 +56,49 @@
     </div>
 
     </main>
-
     <!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
-    <div class="footer-dark">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h2>Other Links</h2>
-                        <ul>
-                            <li><a href="#" alt="">link</a></li>
-                            <li><a href="#" alt="">link</a></li>
-                        </ul>
+    <div id="wrapper">
+            <div id="footer">
+                <footer class="footer footer-dark">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3 item">
+                                <h2>Other Links</h2>
+                                <ul>
+                                    <li><a href="https://www.umuc.edu/" alt="">UMUC</a></li>
+                                    <li><a href="https://www.computer.org/" alt="">IEEE CS</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3 item">
+                                <h2>About</h2>
+                                <ul>
+                                    <li><a href="#">Purpose</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 item text">
+                                <h2>Tenant Portal Web Application</h2>
+                                <p>Prototype - tenant / landlord maintenance issue reporting system</p>
+                                <img src="assets/img/logo.png" alt="" width="155">
+                            </div>
+                            <!-- Bottom Footer Icons -->
+                            <div class="col item social"> 
+                                <a href="https://play.google.com/store/search?q=stinkybootsllc&c=apps"><i class="fab fa-android fa-2x"></i></a>
+                                <a href="https://github.com/stinkybootsllc"><i class="fab fa-github fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/in/eduardo-estrada-b8744017a/"><i class="fab fa-linkedin fa-2x"></i></a>
+                            </div>
+                        </div> <!-- end row -->
+                        <p class="copyright">StinkyBoots Studio 2018</p>
                     </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h2>About</h2>
-                        <ul>
-                            <li><a href="#">Purpose</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 item text">
-                        <h2>Main Site Title</h2>
-                        <p> sub paragraph</p>
-                        <img src="assets/img/logo.png" alt="" width="155">
-                    </div>
-                    <!-- Bottom Footer Icons -->
-                    <div class="col item social"> 
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>	
-                </div> <!-- end row -->
-                <p class="copyright">StinkyBoots Studio 2018</p>
-            </div>
-        </footer>
-    </div> <!-- end <div class="footer-dark">-->
-    <!--===== END FOOTER =============-->
-
-
-
+                </footer><!-- end <div class="footer-dark">-->
+            </div><!-- end <div id="footer">-->
+        </div><!-- end <div id="wrapper">-->
+        <!--===== END FOOTER =============-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
-
     <!-- Reload JavaScript -->
     <script>
     // Reload page every 30 minutes
