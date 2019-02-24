@@ -52,13 +52,6 @@
         <h3>Tenant Portal Application</h3>
         <p>Closed Maintenace issue history</p>
     </div>
-
-
-
-
-
-
-
     <div class="container">
 
         <?php 
@@ -71,55 +64,61 @@
              */
             // connect to the database
             require("../../Tenants_variables/maint_dbconnect.php");
-            // select and display everything in the TenantMaintIssues Table
-            $sql = "SELECT IssueReportDate,IssuePriority,IssueStatus,IssueDescription,IssueSolution,IssueRepairDate,ScheduledDate,
-            IssueRepairPrice,CONCAT(tenantFname.TenantFirstName,' ',tenantLname.TenantLastName) AS Name,
-            tenantApt.Apt_number AS aptNumber
-            FROM TenantMaintIssues 
-            JOIN Tenants tenantFname ON TenantMaintIssues.Tenant_FK = tenantFname.Tenant_ID
-            JOIN Tenants tenantLname ON TenantMaintIssues.Tenant_FK = tenantLname.Tenant_ID
-            JOIN Apartments tenantApt ON TenantMaintIssues.Tenant_Apt_FK = tenantApt.Apartment_ID
-            WHERE IssueStatus='closed' ORDER BY IssueReportDate DESC";
+            session_start();
+            if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
+                // user session MUST be SET
+                // select and display everything in the TenantMaintIssues Table
+                $sql = "SELECT IssueReportDate,IssuePriority,IssueStatus,IssueDescription,IssueSolution,IssueRepairDate,ScheduledDate,
+                IssueRepairPrice,CONCAT(tenantFname.TenantFirstName,' ',tenantLname.TenantLastName) AS Name,
+                tenantApt.Apt_number AS aptNumber
+                FROM TenantMaintIssues 
+                JOIN Tenants tenantFname ON TenantMaintIssues.Tenant_FK = tenantFname.Tenant_ID
+                JOIN Tenants tenantLname ON TenantMaintIssues.Tenant_FK = tenantLname.Tenant_ID
+                JOIN Apartments tenantApt ON TenantMaintIssues.Tenant_Apt_FK = tenantApt.Apartment_ID
+                WHERE IssueStatus='closed' ORDER BY IssueReportDate DESC";
 
-            $result = mysqli_query($conn, $sql);
+                $result = mysqli_query($conn, $sql);
 
-            if (mysqli_num_rows($result) > 0) {
-                // make the table
-                echo "<table class='table table-bordered'>";
-                echo "<thead class='thead-dark'>";
-                echo "<tr>";
-                echo "<th scope='col'>Reported Date</th>";
-                echo "<th scope='col'>Priority</th> ";
-                echo "<th scope='col'>Status</th>";
-                echo "<th scope='col'>Description</th>";
-                echo "<th scope='col'>Solution</th>"; 
-                echo "<th scope='col'>Repair Date</th>";
-                echo "<th scope='col'>Scheduled Date</th>";
-                echo "<th scope='col'>Repair Price</th>";
-                echo "<th scope='col'>Tenant</th>"; 
-                echo "<th scope='col'>APT NUM</th>";
-                echo "</tr>";
-                echo "</thead>";
-                // output data of each row
-                while($row = mysqli_fetch_assoc($result)) {
+                if (mysqli_num_rows($result) > 0) {
+                    // make the table
+                    echo "<table class='table table-bordered'>";
+                    echo "<thead class='thead-dark'>";
                     echo "<tr>";
-                    echo "<td>".$row["IssueReportDate"]."</td>"; 
-                    echo "<td>".$row["IssuePriority"]. "</td>"; 
-                    echo "<td>".$row["IssueStatus"].  "</td>"; 
-                    echo "<td>".$row["IssueDescription"]."</td>"; 
-                    echo "<td>".$row["IssueSolution"]."</td>"; 
-                    echo "<td>".$row["IssueRepairDate"]."</td>";  
-                    echo "<td>".$row["ScheduledDate"]."</td>"; 
-                    echo "<td>".$row["IssueRepairPrice"]."</td>"; 
-                    echo "<td>".$row["Name"]."</td>"; 
-                    echo "<td>".$row["aptNumber"]."</td>";       
-                } // end while($row = mysqli_fetch_assoc($result))
-                echo "</table>"; // close the table
-            } else {
-                echo "0 closed results found";
-            } // end if (mysqli_num_rows($result) > 0)
-            // close the DB connection
-            mysqli_close($conn);
+                    echo "<th scope='col'>Reported Date</th>";
+                    echo "<th scope='col'>Priority</th> ";
+                    echo "<th scope='col'>Status</th>";
+                    echo "<th scope='col'>Description</th>";
+                    echo "<th scope='col'>Solution</th>"; 
+                    echo "<th scope='col'>Repair Date</th>";
+                    echo "<th scope='col'>Scheduled Date</th>";
+                    echo "<th scope='col'>Repair Price</th>";
+                    echo "<th scope='col'>Tenant</th>"; 
+                    echo "<th scope='col'>APT NUM</th>";
+                    echo "</tr>";
+                    echo "</thead>";
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<td>".$row["IssueReportDate"]."</td>"; 
+                        echo "<td>".$row["IssuePriority"]. "</td>"; 
+                        echo "<td>".$row["IssueStatus"].  "</td>"; 
+                        echo "<td>".$row["IssueDescription"]."</td>"; 
+                        echo "<td>".$row["IssueSolution"]."</td>"; 
+                        echo "<td>".$row["IssueRepairDate"]."</td>";  
+                        echo "<td>".$row["ScheduledDate"]."</td>"; 
+                        echo "<td>".$row["IssueRepairPrice"]."</td>"; 
+                        echo "<td>".$row["Name"]."</td>"; 
+                        echo "<td>".$row["aptNumber"]."</td>";       
+                    } // end while($row = mysqli_fetch_assoc($result))
+                    echo "</table>"; // close the table
+                } else {
+                    echo "0 closed results found";
+                } // end if (mysqli_num_rows($result) > 0)
+                // close the DB connection
+                mysqli_close($conn);
+            } else { 
+                echo "<h5>User Is Not Logged-In</h5>"; 
+            }// end if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass']))
         ?>
     </div>
 
