@@ -20,10 +20,20 @@
 		<link rel="stylesheet" href="../assets/css/Footer-Dark.css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand/logo -->
+ 		<!-- Top Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Tenant Portal</a>
-        </nav>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../tenants/tenantRegister.php"><ion-icon name="person-add"></ion-icon>&nbsp Register</a>
+                    </li>
+                </ul>
+            </div>
+		</nav>
         <div class="container-fluid">
             <h3>Tenant Portal Application (BETA VER.1.0)</h3>
             <p>Random User Security Question Validation</p>

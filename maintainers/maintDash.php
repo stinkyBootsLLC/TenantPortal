@@ -6,53 +6,56 @@
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <!-- Font-Awsome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
-    crossorigin="anonymous">
-    <title>Tenant Portal 2019</title>
-    <meta name="author" content="Eduardo Estrada">
-    <meta name="description" content="description here">
-    <meta name="keywords" content="keywords,here">
-    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-    <!-- CSS home made sources-->
-    <link rel="stylesheet" href="../assets/css/tenants.css">
-    <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
-  </head>
-  <body>
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand/logo -->
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <!-- Font-Awsome CSS -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
+        crossorigin="anonymous">
+        <title>Tenant Portal 2019</title>
+        <meta name="author" content="Eduardo Estrada">
+        <meta name="description" content="description here">
+        <meta name="keywords" content="keywords,here">
+        <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+        <!-- CSS home made sources-->
+        <link rel="stylesheet" href="../assets/css/tenants.css">
+        <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
+    </head>
+    <body>
+        <!-- Top Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Tenant Portal</a>
-
-            <!-- Links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="maintDash.php"><ion-icon name="home"></ion-icon>&nbsp Maintenance Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Open Issues</a>
+                    <a class="nav-link" href="../maintRequests/maintOpenIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Open Issues</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pending Issues</a>
+                    <a class="nav-link" href="../maintRequests/maintPendingIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Pending Issues</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Closed Issues</a>
+                    <a class="nav-link" href="../maintRequests/maintClosedIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Closed Issues</a>
                 </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../logout.php"><ion-icon name="power"></ion-icon>&nbsp Log-Out</a>
-                </li>
-            </ul>
+                
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../logout.php"><ion-icon name="power"></ion-icon>&nbsp Log-Out</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-
+        <!-- Top Nav Bar -->
         <div class="container-fluid">
             <h3>Tenant Portal Application</h3>
             <p>Maintenace Dashboard</p>

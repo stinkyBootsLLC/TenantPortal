@@ -52,35 +52,6 @@
     </nav>
     <!-- Top Nav Bar -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="container-fluid">
         <h3>Tenant Portal Application</h3>
         <p>Tenant Dashboard</p>
