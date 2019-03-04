@@ -45,6 +45,7 @@
         </nav>
         <!-- Top Nav Bar -->
         <div class="top-spacing"></div>
+        <div class="top-spacing"></div>
         <div class="container-fluid">
             <h3>Tenant Portal Application (BETA VER.1.0)</h3>
             <p>Report Maintenace issue</p>
@@ -73,6 +74,9 @@
 
             
         </main>  
+        <div class="top-spacing"></div>
+        <div class="top-spacing"></div>
+        <div class="top-spacing"></div>
         <div class="top-spacing"></div>
         <!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
         <div id="wrapper">

@@ -52,6 +52,7 @@
     </nav>
     <!-- Top Nav Bar -->
     <div class="top-spacing"></div>
+    <div class="top-spacing"></div>
     <div class="container-fluid">
         <h3>Tenant Portal Application</h3>
         <p>Tenant Dashboard</p>
@@ -119,6 +120,8 @@
             </div> <!--end class="row"-->
         </div><!--end class="container"-->
     </main>
+    <div class="top-spacing"></div>
+    <div class="top-spacing"></div>
     <div class="top-spacing"></div>
      <!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
      <div id="wrapper">
