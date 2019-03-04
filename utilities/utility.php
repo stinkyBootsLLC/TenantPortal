@@ -6,8 +6,6 @@
      * @return string
      */
     function sanatizeData($data){
-		// this is causing fatal error in PHP 7
-        // $escapeData = mysql_escape_string( trim($data) );
 		$specCharData = htmlspecialchars($data);
 		$cleanData = str_replace(array(':', '-', '/', '*','=','?'), '', $specCharData);
         return $cleanData;
