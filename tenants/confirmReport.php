@@ -58,8 +58,12 @@
             $aptNumber = sanatizeData($_SESSION["TenantID"]);
             // connect to database
             require("../../Tenants_variables/tenant_dbconnect.php");
+            $clean_reportDate = mysqli_real_escape_string($conn,$reportDate);
+            $clean_description = mysqli_real_escape_string($conn,$description);
+            $clean_tenantName = mysqli_real_escape_string($conn,$tenantName);
+            $clean_aptNumber = mysqli_real_escape_string($conn,$aptNumber);
             $sql = "INSERT INTO TenantMaintIssues (IssueReportDate, IssueStatus, IssueDescription, Tenant_FK, Tenant_Apt_FK)
-            VALUES ('$reportDate', 'open','$description', '$tenantName','$aptNumber')";
+            VALUES ('$clean_reportDate', 'open','$clean_description', '$clean_tenantName','$clean_aptNumber')";
             
             if (mysqli_query($conn, $sql)) {
                 echo "New record created successfully";
