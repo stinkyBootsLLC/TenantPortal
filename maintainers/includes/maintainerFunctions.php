@@ -10,10 +10,12 @@
     function selectMaintInfo($userEmail, $userPassWord){
         // parameters are already sanitized at this point
         // connect to database
-        require("../../Tenants_variables/maint_dbconnect.php"); 
+        require("../../Tenants_variables/maint_dbconnect.php");
+        $clean_userEmail = mysqli_real_escape_string($conn,$userEmail);
+        $clean_userPassWord = mysqli_real_escape_string($conn,$userPassWord); 
         //SQL SELECT STATEMENT -- encrypt the password and MATCH
         $sql = "SELECT Maintainer_ID,MaintainerEmail,CONCAT(MaintainerFirstName,' ',MaintainerLastName) AS Name FROM Maintainers 
-        WHERE MaintainerEmail = '$userEmail' and MaintainertPassword = password('$userPassWord')";
+        WHERE MaintainerEmail = '$clean_userEmail' and MaintainertPassword = password('$clean_userPassWord')";
         // mysqli_query(connection,query,resultmode); performs a query against the database.
         $result = mysqli_query($conn,$sql);
         // if the record exists in DB
@@ -111,12 +113,11 @@
         $maint_ID = $_SESSION['Maintainer_ID'];
         // connect to database
         require("../../Tenants_variables/maint_dbconnect.php");
-        // debug 
-        //echo "<h3> answer = " .$secretAnswer."</h3><br>";
+        $clean_secretAnswer = mysqli_real_escape_string($conn,$secretAnswer);
         //SQL SELECT STATEMENT -- Check the 3 answers
         $sql = "SELECT MaintainerProfile_ID,MaintainerSecAns1,MaintainerSecAns2,MaintainerSecAns3 
         FROM MaintainerProfiles WHERE MaintainerProfile_ID = '$maint_ID' 
-        AND MaintainerSecAns1 = password('$secretAnswer') OR MaintainerSecAns2 = password('$secretAnswer') OR MaintainerSecAns3 = password('$secretAnswer')";
+        AND MaintainerSecAns1 = password('$clean_secretAnswer') OR MaintainerSecAns2 = password('$clean_secretAnswer') OR MaintainerSecAns3 = password('$clean_secretAnswer')";
         // returned record
         $result = mysqli_query($conn,$sql);
         // if a record is returned
