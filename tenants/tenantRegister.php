@@ -27,20 +27,28 @@ require("../utilities/utility.php");
 	</head>
 	<body>
 		<header></header>
-			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-				<!-- Brand/logo -->
-				<a class="navbar-brand" href="#">Tenant Portal</a>
-				<!-- Links -->
+		<!-- Top Nav Bar -->
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="index.html">Tenant Portal</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-					<a class="nav-link" href="tenantRegister.php"><ion-icon name="person-add"></ion-icon>&nbsp Register</a>
+						<a class="nav-link" href="tenantRegister.php"><ion-icon name="person-add"></ion-icon>&nbsp Register</a>
 					</li>
 				</ul>
-			</nav>
-			<div class="container-fluid">
-				<h3>Tenant Portal Application</h3>
-				<p>Tenant Registration Form</p>
 			</div>
+		</nav>
+		<!-- Top Nav Bar -->
+
+
+			<div class="top-spacing"></div>	
+		<div class="container-fluid">
+			<h3>Tenant Portal Application</h3>
+			<p>Tenant Registration Form</p>
+		</div>
 		<main>
 			<!-- Container for the Form-->
 			<div class="container">
