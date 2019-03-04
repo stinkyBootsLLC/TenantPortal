@@ -110,12 +110,11 @@
         $tenantID = $_SESSION['TenantID'];
         // connect to database
         require("../../Tenants_variables/tenant_dbconnect.php"); 
-        // debug 
-        //echo "<h3> answer = " .$secretAnswer."</h3><br>";
+        $clean_secretAnswer = mysqli_real_escape_string($conn,$secretAnswer);
         //SQL SELECT STATEMENT -- Check the 3 answers
         $sql = "SELECT TenantProfile_ID,TenantSecAns1,TenantSecAns2,TenantSecAns3 
         FROM TenantProfiles WHERE TenantProfile_ID = '$tenantID' 
-        AND TenantSecAns1 = password('$secretAnswer') OR TenantSecAns2 = password('$secretAnswer') OR TenantSecAns3 = password('$secretAnswer')";
+        AND TenantSecAns1 = password('$clean_secretAnswer') OR TenantSecAns2 = password('$clean_secretAnswer') OR TenantSecAns3 = password('$clean_secretAnswer')";
         // returned record
         $result = mysqli_query($conn,$sql);
         // if a record is returned
