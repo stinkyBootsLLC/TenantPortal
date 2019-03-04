@@ -10,9 +10,11 @@
     function selectTenantInfo($userEmail, $userPassWord){
         // connect to database
         require("../../Tenants_variables/tenant_dbconnect.php");
+        $clean_userEmail = mysqli_real_escape_string($conn,$userEmail);
+        $clean_userPassWord = mysqli_real_escape_string($conn,$userPassWord);
         //SQL SELECT STATEMENT -- encrypt the password and MATCH
         $sql = "SELECT Tenant_ID,TenantEmail,CONCAT(TenantFirstName,' ',TenantLastName) AS Name,TenantAddress_FK FROM Tenants 
-        WHERE TenantEmail = '$userEmail' and TenantPassword = password('$userPassWord')";
+        WHERE TenantEmail = '$clean_userEmail' and TenantPassword = password('$clean_userPassWord')";
         // mysqli_query(connection,query,resultmode); performs a query against the database.
         $result = mysqli_query($conn,$sql);
         // if the record exists in DB
