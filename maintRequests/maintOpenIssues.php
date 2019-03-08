@@ -171,5 +171,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+        <!-- Reload JavaScript -->
+        <script>
+            // Reload page every 30 minutes
+            setTimeout(function(){
+                window.location.reload(1);
+            }, 1800000);
+        </script>
     </body>
 </html>
