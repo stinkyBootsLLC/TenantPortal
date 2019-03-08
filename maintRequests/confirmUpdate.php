@@ -45,8 +45,10 @@
                 echo "Record updated successfully";
                 header("Refresh:3; url=../maintainers/maintDash.php");
             } else {
-                echo "Error updating record: " . mysqli_error($conn);
-                echo "<h5>Priority, and Scheduled Date Cannot be blank</h5>";
+                //echo "Error updating record: " . mysqli_error($conn);
+                echo "<h2>Priority, and Scheduled Date Cannot be blank</h2>";
+                echo "<p>When updating an issue from open - pending<br/>";
+                echo "Priority, and Scheduled Date fields cannot be blank</p>";
             } // end (mysqli_query($conn, $sql))
         // from pending to closed OR from open to closed
         } else if ($status == "closed"){
@@ -59,13 +61,14 @@
                     echo "Record updated successfully";
                     header("Refresh:3; url=../maintainers/maintDash.php");
                 } else {
-                    echo "<h5>Closed Issues</h5>"; 
-                    echo "<p>Must completely fill out form<p>"; 
-                    echo "Error updating record: " . mysqli_error($conn);
+                    echo "<h2>Closed Issues - Must completely fill out form</h2>"; 
+                    echo "<p>When updating an issue from open - closed OR pending - closed<br/>";
+                    echo "Must completely fill out form</p>";
+                    //echo "Error updating record: " . mysqli_error($conn);
                 } // end (mysqli_query($conn, $sql))
 
         } else {
-            echo "<h5>Status must be PENDING or Closeed</h5>"; 
+            echo "<h2>Status must be PENDING or CLOSED</h2>"; 
         }// end if ($status == "closed")
 
     } else { 
