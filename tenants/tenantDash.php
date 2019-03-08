@@ -51,7 +51,7 @@
         </div>
     </nav>
     <!-- Top Nav Bar -->
-    <div class="top-spacing"></div>
+
     <div class="top-spacing"></div>
     <div class="container-fluid">
         <h3>Tenant Portal Application</h3>

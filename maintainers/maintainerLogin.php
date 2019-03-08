@@ -35,7 +35,6 @@
             </div>
         </nav>
         <div class="top-spacing"></div>
-        <div class="top-spacing"></div>
         <div class="container-fluid">
             <h3>Tenant Portal Application (BETA VER.1.0)</h3>
             <p>Random User Security Question Validation</p>
