@@ -20,8 +20,8 @@
         <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
     </head>
     <body>
-<!-- Top Nav Bar -->
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <!-- Top Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Tenant Portal</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -50,9 +50,6 @@
             </div>
         </nav>
         <!-- Top Nav Bar -->
-        <div class="top-spacing"></div>
-        <div class="top-spacing"></div>
-        <div class="top-spacing"></div>
         <div class="top-spacing"></div>
         <div class="container-fluid">
             <h3>Tenant Portal Application</h3>
