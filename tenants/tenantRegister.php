@@ -130,6 +130,9 @@ require("../utilities/utility.php");
 				</form>
 			</div>
 		</main>
+		<div class="top-spacing"></div>
+		<div class="top-spacing"></div>
+		<div class="top-spacing"></div>
 		<!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
 		<div id="wrapper">
 			<div id="footer">
