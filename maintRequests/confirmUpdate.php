@@ -8,6 +8,8 @@
  * maintPendingIssues.php
  * Purpose:
  * To update the maint issue in the database
+ * Modification - 3/8/2019
+ * Trying to fix problem - with empty fields - only on the aws infastructure
  */
 
     include("../utilities/utility.php");
@@ -29,28 +31,46 @@
     // user session MUST be SET
     if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
 
-
-
-
         // connect to database
         require("../../Tenants_variables/maint_dbconnect.php");
 
-        $sql = "UPDATE TenantMaintIssues SET IssuePriority='$priority',IssueStatus='$status', IssueSolution='$solution',
-        IssueRepairDate='$repairDate',ScheduledDate='$scheduleDate',IssueRepairPrice='$price'
-        WHERE TenantMaintIssue_ID=$issueID ";
 
-        if (mysqli_query($conn, $sql)) {
-            echo "Record updated successfully";
+        // from open to pending update
+        if($status == "pending"){
+
+            $sql = "UPDATE TenantMaintIssues SET IssuePriority='$priority',IssueStatus='$status',ScheduledDate='$scheduleDate'
+            WHERE TenantMaintIssue_ID=$issueID ";
+    
+            if (mysqli_query($conn, $sql)) {
+                echo "Record updated successfully";
+                header("Refresh:3; url=../maintainers/maintDash.php");
+            } else {
+                echo "Error updating record: " . mysqli_error($conn);
+                echo "<h5>Priority, and Scheduled Date Cannot be blank</h5>";
+            } // end (mysqli_query($conn, $sql))
+        // from pending to closed OR from open to closed
+        } else if ($status == "closed"){
+                // everything must be filled out
+                $sqlCL = "UPDATE TenantMaintIssues SET IssuePriority='$priority',IssueStatus='$status', IssueSolution='$solution',
+                IssueRepairDate='$repairDate',ScheduledDate='$scheduleDate',IssueRepairPrice='$price'
+                WHERE TenantMaintIssue_ID=$issueID ";
         
-            header("Refresh:3; url=../maintainers/maintDash.php");
-        } else {
-            echo "Error updating record: " . mysqli_error($conn);
-        }
+                if (mysqli_query($conn, $sqlCL)) {
+                    echo "Record updated successfully";
+                    header("Refresh:3; url=../maintainers/maintDash.php");
+                } else {
+                    echo "<h5>Closed Issues</h5>"; 
+                    echo "<p>Must completely fill out form<p>"; 
+                    echo "Error updating record: " . mysqli_error($conn);
+                } // end (mysqli_query($conn, $sql))
 
-        mysqli_close($conn);
+        } else {
+            echo "<h5>Status must be PENDING or Closeed</h5>"; 
+        }// end if ($status == "closed")
+
     } else { 
         echo "<h5>User Is Not Logged-In</h5>"; 
-    }
+    } // end if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass']))
 
 ?>
 
