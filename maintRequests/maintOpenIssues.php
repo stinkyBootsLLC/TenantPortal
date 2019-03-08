@@ -65,9 +65,12 @@
                  * Purpose:
                  * To display the open issues to the Landlord and Maintenace
                  */
+                include("../utilities/utility.php");
                 session_start();
                 // user session MUST be SET
                 if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
+                    // monitor the session
+                    monitorSession();
                     // connect to the database
                     require("../../Tenants_variables/maint_dbconnect.php");
                     // select and display everything in the TenantMaintIssues Table

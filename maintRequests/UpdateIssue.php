@@ -68,11 +68,14 @@
                  * To update the maint issue by ID
                  */
                 include("../utilities/utility.php");
+
                 // get the the id
                 $issueID = sanatizeData($_GET["id"]); 
                 session_start();
                 // user session MUST be SET
                 if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
+                    // monitor the session
+                    monitorSession();
                     // connect to the database
                     require("../../Tenants_variables/maint_dbconnect.php");
                     // select and display everything in the TenantMaintIssues Table

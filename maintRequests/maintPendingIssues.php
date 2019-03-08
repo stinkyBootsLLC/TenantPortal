@@ -64,12 +64,14 @@
                  * Purpose:
                  * To display the open and Pending issues to the Landlord and Maintenace
                  */
+                include("../utilities/utility.php");
                 session_start();
                 // user session MUST be SET
                 if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
+                    // monitor the session
+                    monitorSession();
                     // connect to the database
                     require("../../Tenants_variables/maint_dbconnect.php");
-
                     // select and display everything in the TenantMaintIssues Table
                     $sql = "SELECT TenantMaintIssue_ID AS ID,IssueReportDate,IssuePriority,IssueStatus,IssueDescription,IssueSolution,IssueRepairDate,
                     ScheduledDate,CONCAT(tenantFname.TenantFirstName,' ',tenantLname.TenantLastName) AS Name,tenantApt.Apt_number AS aptNumber
