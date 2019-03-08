@@ -28,6 +28,10 @@
     session_start();
     // user session MUST be SET
     if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
+
+
+
+
         // connect to database
         require("../../Tenants_variables/maint_dbconnect.php");
 
@@ -43,8 +47,8 @@
             echo "Error updating record: " . mysqli_error($conn);
         }
 
-    mysqli_close($conn);
-    else { 
+        mysqli_close($conn);
+    } else { 
         echo "<h5>User Is Not Logged-In</h5>"; 
     }
 
