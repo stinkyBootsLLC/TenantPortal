@@ -25,22 +25,28 @@
     $name = sanatizeData($_POST["tenantName"]); 
     $aptNumber = sanatizeData($_POST["aptNumber"]); 
 
-    // connect to database
-    require("../../Tenants_variables/maint_dbconnect.php");
+    session_start();
+    // user session MUST be SET
+    if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass'])){
+        // connect to database
+        require("../../Tenants_variables/maint_dbconnect.php");
 
-    $sql = "UPDATE TenantMaintIssues SET IssuePriority='$priority',IssueStatus='$status', IssueSolution='$solution',
-    IssueRepairDate='$repairDate',ScheduledDate='$scheduleDate',IssueRepairPrice='$price'
-    WHERE TenantMaintIssue_ID=$issueID ";
+        $sql = "UPDATE TenantMaintIssues SET IssuePriority='$priority',IssueStatus='$status', IssueSolution='$solution',
+        IssueRepairDate='$repairDate',ScheduledDate='$scheduleDate',IssueRepairPrice='$price'
+        WHERE TenantMaintIssue_ID=$issueID ";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "Record updated successfully";
-       
-        header("Refresh:3; url=../maintainers/maintDash.php");
-    } else {
-        echo "Error updating record: " . mysqli_error($conn);
-    }
+        if (mysqli_query($conn, $sql)) {
+            echo "Record updated successfully";
+        
+            header("Refresh:3; url=../maintainers/maintDash.php");
+        } else {
+            echo "Error updating record: " . mysqli_error($conn);
+        }
 
     mysqli_close($conn);
+    else { 
+        echo "<h5>User Is Not Logged-In</h5>"; 
+    }
 
 ?>
 
