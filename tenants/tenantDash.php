@@ -90,7 +90,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Report Maintenance Issue</h5>
                                 <p class="card-text">Submit a maintenance issue for repair.</p>
-                                <a href="reportIssue.php" class="btn btn-primary">Go</a>
+                                <a href="reportIssue.php" class="btn btn-primary">Report Problem</a>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">My Pending Maint Issues</h5>
                                 <p class="card-text">Pending issues with scheduled repair dates.</p>
-                                <a href="#" class="btn btn-primary">Button</a>
+                                <a href="#" class="btn btn-secondary">Coming Soon</a>
                             </div>
                         </div>
                     </div>
@@ -111,8 +111,8 @@
                         <div class="card w-100">
                             <div class="card-body">
                                 <h5 class="card-title">My Closed Maint Issues</h5>
-                                <p class="card-text">Closed issue history.</p>
-                                <a href="#" class="btn btn-primary">Button</a>
+                                <p class="card-text">Closed issue history, with closed repair dates.</p>
+                                <a href="#" class="btn btn-secondary">Coming Soon</a>
                             </div>
                         </div>
                     </div>
