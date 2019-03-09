@@ -71,8 +71,9 @@
                     </form>
                 </div>
             </div>
-
-            
+            <div class="container">
+                <p>Please use this form to report a maintenance problem to the property manager</p>
+            </div>
         </main>  
         <div class="top-spacing"></div>
         <div class="top-spacing"></div>
