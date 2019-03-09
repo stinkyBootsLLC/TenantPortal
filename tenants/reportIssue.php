@@ -64,7 +64,7 @@
                         <div class='form-group'>
                             <label for='Description'>Description:</label>
                             <textarea  class='form-control' name='IssueDescription'rows='2' cols='33' id='Description' 
-                            placeholder="Describe the problem here..."></textarea>
+                            placeholder="Describe the problem here..." required></textarea>
                         </div> 
                         <input class='btn btn-success' type='submit' value='Report'>
                         <a id="formButton" href="tenantDash.php" class="btn btn-danger">Cancel</a>
