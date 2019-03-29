@@ -132,6 +132,37 @@
 
     }// end validateTenantAnswer()
 
+    /**
+     * Count the number of "open" maint issue 
+     * @return Integer 
+     */
+    function numberOfOpenIssues(){
+        // connect to the database
+        require("../../Tenants_variables/maint_dbconnect.php");
+        // select and display everything in the TenantMaintIssues Table
+        $sql = "SELECT IssueStatus, count(*) FROM TenantMaintIssues WHERE IssueStatus = 'open'";
+        // returned reslult
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            // declare variable
+            $openIssues = 0;
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+                //echo "<p>".$row["count(*)"]."</p>";
+                $openIssues = $row["count(*)"];
+
+    
+            } // end while  ($row = mysqli_fetch_assoc($result))
+
+            return $openIssues;
+        } else {
+            echo "0 Open issues found";
+        } // end if (mysqli_num_rows($result) > 0)
+
+        // close the DB connection
+        mysqli_close($conn);
+    }// end numberOfOpenIssues
+
 
 
     // function displayUserProfile(){
