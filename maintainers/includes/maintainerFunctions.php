@@ -160,7 +160,10 @@
         // close the DB connection
         mysqli_close($conn);
     }// end numberOfOpenIssues
-
+    /**
+     * Count the number of "pending" maint issue 
+     * @return Integer 
+     */
     function numberOfPendingIssues(){
         // connect to the database
         require("../../Tenants_variables/maint_dbconnect.php");
@@ -184,7 +187,35 @@
 
         // close the DB connection
         mysqli_close($conn);
-    }// end numberOfPendingIssues(){
+    }// end numberOfPendingIssues()
+    /**
+     * Count the number of "closed" maint issue 
+     * @return Integer 
+     */
+    function numberOfClosedIssues(){
+        // connect to the database
+        require("../../Tenants_variables/maint_dbconnect.php");
+        // select and display everything in the TenantMaintIssues Table
+        $sql = "SELECT IssueStatus, count(*) FROM TenantMaintIssues WHERE IssueStatus = 'closed'";
+        // returned reslult
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            // declare variable
+            $closedIssues = 0;
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+                //echo "<p>".$row["count(*)"]."</p>";
+                $closedIssues = $row["count(*)"];
+            } // end while  ($row = mysqli_fetch_assoc($result))
+
+            return $closedIssues;
+        } else {
+            echo "0 closed issues found";
+        } // end if (mysqli_num_rows($result) > 0)
+
+        // close the DB connection
+        mysqli_close($conn);
+    }// end numberOfClosedIssues(){
        
 
 
