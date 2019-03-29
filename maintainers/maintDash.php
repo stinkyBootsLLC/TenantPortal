@@ -66,6 +66,7 @@
             <div class="container">
                 <?php
                     include("../utilities/utility.php");
+                    include("includes/maintainerFunctions.php");
                     $startTime = $_SESSION['start_activity'];// capture the session start time
                     // Display the GLOBAL Session information
                     
@@ -88,7 +89,8 @@
                 ?>
             </div>
             <div class="container">
-            <?php include("includes/maintainerFunctions.php");$open =numberOfOpenIssues();?>
+            <?php $open = numberOfOpenIssues();?>
+            <?php $pending = numberOfPendingIssues();?>
                 <div class="row">
                     <div class="col-lg-4 col-md-8 col-sm-10">
                         <div class="shadow p-3 mb-5 bg-white rounded">
@@ -102,10 +104,11 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-8 col-sm-10">
+                    
                         <div class="shadow p-3 mb-5 bg-white rounded">
                             <div class="card w-100">
                                 <div class="card-body">
-                                    <h5 class="card-title">Pending Maint Issues</h5>
+                                    <h5 class="card-title">Pending Maint Issues [<?php  echo $pending; ?>]</h5>
                                     <p class="card-text">Pending issues with scheduled repair dates.</p>
                                     <a href="../maintRequests/maintPendingIssues.php" class="btn btn-primary">Button</a>
                                 </div>
