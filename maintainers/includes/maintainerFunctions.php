@@ -150,8 +150,6 @@
             while($row = mysqli_fetch_assoc($result)) {
                 //echo "<p>".$row["count(*)"]."</p>";
                 $openIssues = $row["count(*)"];
-
-    
             } // end while  ($row = mysqli_fetch_assoc($result))
 
             return $openIssues;
@@ -162,6 +160,32 @@
         // close the DB connection
         mysqli_close($conn);
     }// end numberOfOpenIssues
+
+    function numberOfPendingIssues(){
+        // connect to the database
+        require("../../Tenants_variables/maint_dbconnect.php");
+        // select and display everything in the TenantMaintIssues Table
+        $sql = "SELECT IssueStatus, count(*) FROM TenantMaintIssues WHERE IssueStatus = 'pending'";
+        // returned reslult
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            // declare variable
+            $pendingIssues = 0;
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+                //echo "<p>".$row["count(*)"]."</p>";
+                $pendingIssues = $row["count(*)"];
+            } // end while  ($row = mysqli_fetch_assoc($result))
+
+            return $pendingIssues;
+        } else {
+            echo "0 pending issues found";
+        } // end if (mysqli_num_rows($result) > 0)
+
+        // close the DB connection
+        mysqli_close($conn);
+    }// end numberOfPendingIssues(){
+       
 
 
 
