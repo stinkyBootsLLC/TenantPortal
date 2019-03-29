@@ -89,8 +89,7 @@
                 ?>
             </div>
             <div class="container">
-            <?php $open = numberOfOpenIssues();?>
-            <?php $pending = numberOfPendingIssues();?>
+            <?php $open = numberOfOpenIssues();$pending = numberOfPendingIssues(); $closed = numberOfClosedIssues();?>
                 <div class="row">
                     <div class="col-lg-4 col-md-8 col-sm-10">
                         <div class="shadow p-3 mb-5 bg-white rounded">
@@ -119,7 +118,7 @@
                         <div class="shadow p-3 mb-5 bg-white rounded">
                             <div class="card w-100">
                                 <div class="card-body">
-                                    <h5 class="card-title">Closed Maint Issues</h5>
+                                    <h5 class="card-title">Closed Maint Issues [<?php  echo $closed; ?>]</h5>
                                     <p class="card-text">Closed issues with completed repaired dates.</p>
                                     <a href="../maintRequests/maintClosedIssues.php" class="btn btn-primary">Button</a>
                                 </div>
