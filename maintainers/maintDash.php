@@ -88,12 +88,13 @@
                 ?>
             </div>
             <div class="container">
+            <?php include("includes/maintainerFunctions.php");$open =numberOfOpenIssues();?>
                 <div class="row">
                     <div class="col-lg-4 col-md-8 col-sm-10">
                         <div class="shadow p-3 mb-5 bg-white rounded">
                             <div class="card w-100">
                                 <div class="card-body">
-                                    <h5 class="card-title">Open Maint Issues</h5>
+                                    <h5 class="card-title">Open Maint Issues [<?php  echo $open; ?>]</h5>
                                     <p class="card-text">Recently added tenant maintenance issues.</p>
                                     <a href="../maintRequests/maintOpenIssues.php" class="btn btn-primary">Button</a>
                                 </div> 
