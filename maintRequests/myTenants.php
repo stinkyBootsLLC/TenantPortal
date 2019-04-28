@@ -101,7 +101,7 @@
                         echo "<th>Apt #</th>";
                         echo "<th>Home Tel #</th>";
                         echo "<th>Mobile #</th>";
-                        echo "<th>Work #</th>";
+                        echo "<th>Work Tel #</th>";
                         echo "</tr>";
                     
                         // output data of each row
