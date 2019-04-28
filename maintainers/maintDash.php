@@ -136,7 +136,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">My Tenants</h5>
                                     <p class="card-text">Registered Tenants.</p>
-                                    <a href="../maintRequests/maintOpenIssues.php" class="btn btn-primary">View Tenants</a>
+                                    <a href="../maintRequests/myTenants.php" class="btn btn-primary">View Tenants</a>
                                 </div> 
                             </div>
                         </div>
