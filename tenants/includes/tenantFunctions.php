@@ -124,7 +124,7 @@
             header("location: tenantDash.php");
         } else {
             echo "answer does not Match";
-            header("location: ../logout.php");
+            header("location: ../../logout.php");
         }// if (mysqli_num_rows($result) > 0)	
 
     }// end validateTenantAnswer()
