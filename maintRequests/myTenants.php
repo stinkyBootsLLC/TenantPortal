@@ -28,19 +28,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../maintainers/maintDash.php"><ion-icon name="home"></ion-icon>&nbsp Maintenance Dashboard <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../maintRequests/maintOpenIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Open Issues</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../maintRequests/maintPendingIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Pending Issues</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../maintRequests/maintClosedIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Closed Issues</a>
-                </li>
-                
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../maintainers/maintDash.php"><ion-icon name="home"></ion-icon>&nbsp Maintenance Dashboard <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../maintRequests/maintOpenIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Open Issues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../maintRequests/maintPendingIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Pending Issues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../maintRequests/maintClosedIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Closed Issues</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../maintRequests/myTenants.php"><ion-icon name="contacts"></ion-icon>&nbsp My Tenants</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -91,36 +94,27 @@
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
-                        
-                        // make the table
-                        echo "<table class='table table-bordered'>";
-                        echo "<thead class='thead-dark'>";
-                        echo "<tr>";
-                        echo "<th>Name</th>";
-                        echo "<th>Email</th>";
-                        echo "<th>Apt #</th>";
-                        echo "<th>Home Tel #</th>";
-                        echo "<th>Mobile #</th>";
-                        echo "<th>Work Tel #</th>";
-                        echo "</tr>";
+
                     
                         // output data of each row
                         while($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>";
-
-                            echo "<td>".$row["name"]."</td>";
-                            echo "<td>".$row["email"]."</td>"; 
-                            echo "<td>".$row["aptNumber"]."</td>"; 
-                            echo "<td>".$row["TenantHomeNumber"]."</td>"; 
-                            echo "<td>".$row["TenantMobileNumber"]."</td>"; 
-                            echo "<td>".$row["TenantWorkNumber"]."</td>";  
-
-
-                            echo "</tr>";   
+                            // Tenanat Information card
+                            echo "<div class='shadow p-3 mb-5 bg-white rounded'>"; 
+                            echo "<div class='card w-100'>"; 
+                            echo "<div class='card-body'>"; 
+                            echo "<h5 class='card-title'>".$row["name"]."</h5>"; 
+                            echo "<p class='card-text'><a href=".$row["email"].">".$row["email"]."</a></p>"; 
+                            echo "<p class='card-text'><b>Apt Number = </b>".$row["aptNumber"]."</p>"; 
+                            echo "<p class='card-text'><b>Home Number = </b>".$row["TenantHomeNumber"]."</p>"; 
+                            echo "<p class='card-text'><b>Mobile Number = </b>".$row["TenantMobileNumber"]."</p>"; 
+                            echo "<p class='card-text'><b>Work Number = </b>".$row["TenantWorkNumber"]."</p>";
+                            echo "</div>"; 
+                            echo "</div>"; 
+                            echo "</div>"; 
                         } // end while  ($row = mysqli_fetch_assoc($result))
-                        echo "</table>"; // close the table  
+                        // echo "</table>"; // close the table  
                     } else {
-                        echo "0 Open issues found";
+                        echo "0 Tenants found";
                     } // end if (mysqli_num_rows($result) > 0)
 
                     // close the DB connection
