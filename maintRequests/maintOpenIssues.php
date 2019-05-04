@@ -28,18 +28,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../maintainers/maintDash.php"><ion-icon name="home"></ion-icon>&nbsp Maintenance Dashboard <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../maintRequests/maintOpenIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Open Issues</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../maintRequests/maintPendingIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Pending Issues</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../maintRequests/maintClosedIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Closed Issues</a>
-                </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../maintainers/maintDash.php"><ion-icon name="home"></ion-icon>&nbsp Maintenance Dashboard <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../maintRequests/maintOpenIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Open Issues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../maintRequests/maintPendingIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Pending Issues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../maintRequests/maintClosedIssues.php"><ion-icon name="grid"></ion-icon>&nbsp Closed Issues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../maintRequests/myTenants.php"><ion-icon name="contacts"></ion-icon>&nbsp My Tenants</a>
+                    </li>
                 
                 </ul>
                 <ul class="navbar-nav ml-auto">
