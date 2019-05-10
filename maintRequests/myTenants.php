@@ -78,8 +78,9 @@
                     require("../../Tenants_variables/maint_dbconnect.php");
 
                     $sql ="SELECT TenantEmail AS email, CONCAT(TenantFirstName,' ',TenantLastName) AS name, TenantHomeNumber, TenantMobileNumber, 
-                    TenantWorkNumber, tenantApt.Apt_number AS aptNumber FROM Tenants
-                    JOIN Apartments tenantApt ON Tenants.TenantAptNum_FK = tenantApt.Apartment_ID";
+                    TenantWorkNumber, tenantApt.Apt_number AS aptNumber, tenantCity.Apt_City AS aptCity FROM Tenants
+                    JOIN Apartments tenantApt ON Tenants.TenantAptNum_FK = tenantApt.Apartment_ID 
+                    JOIN Apartments tenantCity ON Tenants.TenantCity_FK = tenantCity.Apartment_ID";
 
                     $result = mysqli_query($conn, $sql);
 
@@ -93,6 +94,7 @@
                             echo "<h5 class='card-title'>".$row["name"]."</h5>"; 
                             echo "<p class='card-text'><a href= 'mailto:".$row["email"]."'>".$row["email"]."</a></p>"; 
                             echo "<p class='card-text'><b>Apt Number = </b>".$row["aptNumber"]."</p>"; 
+                            echo "<p class='card-text'><b>City = </b>".$row["aptCity"]."</p>";
                             echo "<p class='card-text'><b>Home Number = </b>".$row["TenantHomeNumber"]."</p>"; 
                             echo "<p class='card-text'><b>Mobile Number = </b>".$row["TenantMobileNumber"]."</p>"; 
                             echo "<p class='card-text'><b>Work Number = </b>".$row["TenantWorkNumber"]."</p>";
