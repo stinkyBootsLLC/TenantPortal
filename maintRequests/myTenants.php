@@ -56,7 +56,7 @@
         <div class="top-spacing"></div>
         <div class="container-fluid">
             <h3>Tenant Portal Application</h3>
-            <p>My Registered Tenants</p>
+            <p>My Registered Tenants (Card View)</p>
         </div> 
         <div class="container">
     
@@ -76,16 +76,6 @@
                     monitorSession();
                     // connect to the database
                     require("../../Tenants_variables/maint_dbconnect.php");
-                    // select and display everything in the TenantMaintIssues Table
-                    // $sql = "SELECT TenantMaintIssue_ID AS ID,IssueReportDate,IssuePriority,IssueStatus,IssueDescription,IssueSolution,IssueRepairDate,ScheduledDate,
-                    // CONCAT(tenantFname.TenantFirstName,' ',tenantLname.TenantLastName) AS Name,
-                    // tenantApt.Apt_number AS aptNumber
-                    // FROM TenantMaintIssues 
-                    // JOIN Tenants tenantFname ON TenantMaintIssues.Tenant_FK = tenantFname.Tenant_ID
-                    // JOIN Tenants tenantLname ON TenantMaintIssues.Tenant_FK = tenantLname.Tenant_ID
-                    // JOIN Apartments tenantApt ON TenantMaintIssues.Tenant_Apt_FK = tenantApt.Apartment_ID
-                    // WHERE IssueStatus='open' ORDER BY IssueReportDate ASC";
-
 
                     $sql ="SELECT TenantEmail AS email, CONCAT(TenantFirstName,' ',TenantLastName) AS name, TenantHomeNumber, TenantMobileNumber, 
                     TenantWorkNumber, tenantApt.Apt_number AS aptNumber FROM Tenants
@@ -94,8 +84,6 @@
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
-
-                    
                         // output data of each row
                         while($row = mysqli_fetch_assoc($result)) {
                             // Tenanat Information card
@@ -103,7 +91,7 @@
                             echo "<div class='card w-100'>"; 
                             echo "<div class='card-body'>"; 
                             echo "<h5 class='card-title'>".$row["name"]."</h5>"; 
-                            echo "<p class='card-text'><a href=".$row["email"].">".$row["email"]."</a></p>"; 
+                            echo "<p class='card-text'><a href= 'mailto:".$row["email"]."'>".$row["email"]."</a></p>"; 
                             echo "<p class='card-text'><b>Apt Number = </b>".$row["aptNumber"]."</p>"; 
                             echo "<p class='card-text'><b>Home Number = </b>".$row["TenantHomeNumber"]."</p>"; 
                             echo "<p class='card-text'><b>Mobile Number = </b>".$row["TenantMobileNumber"]."</p>"; 
