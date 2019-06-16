@@ -2,7 +2,6 @@
 // security ?s and session monitor fuction
 // and apartment list function
 require("../utilities/utility.php");
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -55,36 +54,43 @@ require("../utilities/utility.php");
 				<h3>Tenent Personal Information</h3>
 				
 				<!-- create the loggin form with an input text boxes -->
-				<form name="login" method="post" action="insertNewTenant.php"> 
+				<form name="login" method="post" action="insertNewTenant.php "> 
 					<!--The Login form should consist of fields for username, email address and a password. -->
 					<div class="form-group">
-						First Name:<input type="text" class="form-control" placeholder="Enter your first name" name="fName" required>
+						<label for="First-Name">First Name:</label>
+						<input type="text" class="form-control" placeholder="Enter your first name" name="fName"  required>
 					</div>
 					<div class="form-group">
-						Last Name:<input type="text" class="form-control" placeholder="Enter your last name" name="lName" required>
+						<label for="Last-Name">Last Name:</label>
+						<input type="text" class="form-control" placeholder="Enter your last name" name="lName"  required>
 					</div>
 
 					<div class="form-group">
-						Apartment:<select class="form-control" name="apt" required>
+						<label for="Apartment">Apartment:</label>
+						<select class="form-control" name="apt"  required>
 						<!-- Questions-->
 						<?php apartments(); ?>
 					</div>
 					<div class="form-group">
-						Home Telephone:<input type="text" class="form-control" placeholder="123-456-7890" name="hPhone"
-						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$">
+						<label for="Home-Telephone"></label>Home Telephone:</label>
+						<input type="text" class="form-control" placeholder="123-456-7890" name="hPhone"
+						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" required>
 					</div>
 					<div class="form-group">
-						Mobile Telephone:<input type="text" class="form-control" placeholder="123-456-7890" name="mPhone"
+						<label for="Mobile-Telephone">Mobile Telephone:</label>
+						<input type="text" class="form-control" placeholder="123-456-7890" name="mPhone"
 						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$">	
 					</div>
 				
 					<div class="form-group">
-						Work Telephone:<input type="text" class="form-control"placeholder="123-456-7890" name="wPhone"
+						<label for="Work-Telephone">Work Telephone:</label>
+						<input type="text" class="form-control"placeholder="123-456-7890" name="wPhone"
 						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$">
 					</div>
 
 					<div class="form-group">
-						E-mail:<input type="email" class="form-control" placeholder="somename@mail.com" name="email" required>
+						<label for="E-mail">E-mail:</label>
+						<input type="email" class="form-control" placeholder="somename@mail.com" name="email"  required>
 					</div>
 
 					<hr>
@@ -92,39 +98,54 @@ require("../utilities/utility.php");
 					<p>Password must contain the following: <strong>1 upper case letter, 1 number and 1 special character
 					and at least 8 characters in length</strong></p>
 					<div class="form-group">
-						Password:<input type="password" class="form-control" placeholder="Enter Password" name="userPassWord" 
-						pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}" required>
+						<label for="Password">Password:</label>
+						<input type="password" class="form-control" placeholder="Enter Password" name="userPassWord" id="userPassWord"
+						pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}" 
+						title="1 upper case letter, 1 number and 1 special character and at least 8 characters in length"  required>
+					</div>
+					<!--Needs to bee test 6/12/2019-->
+					<div class="form-group">
+							<label for="confirm-Password">Confirm Password:</label>
+							<input type="password" class="form-control" placeholder="Re-type Password" name="conFirmUserPassWord" id="conFirmUserPassWord"
+							pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}" 
+							title="1 upper case letter, 1 number and 1 special character and at least 8 characters in length"  required>
 					</div>
 					<hr>
 					<div class="form-group">
-						Security Question:<select class="form-control" name="secquest1" required>
+						<label for="Security-Question-1">Security Question:</label>
+						<select class="form-control" name="secquest1"  required>
 						<!-- Questions-->
 						<?php registerQuestions(); ?>
 					</div>
 					<div class="form-group">
-						Answer:<input class="form-control" type="text" placeholder="Enter Answer" name="secanwser1" required>
+						<label for="Answer-1">Answer:</label>
+						<input class="form-control" type="text" placeholder="Enter Answer" name="secanwser1"  >
 					</div>
 					<hr>
 					<div class="form-group">
-						Security Question:<select class="form-control" name="secquest2" required>
+						<label for="Security-Question-2">Security Question:</label>
+						<select class="form-control" name="secquest2"  required>
 						<!-- Questions-->
 						<?php registerQuestions(); ?>
 					</div>
 					<div class="form-group">
-						Answer:<input class="form-control" type="text" placeholder="Enter Answer" name="secanwser2" required>
+						<label for="Answer-2">Answer:</label>
+						<input class="form-control" type="text" placeholder="Enter Answer" name="secanwser2"  required>
 					</div>
 					<hr>
 					<div class="form-group">
-						Security Question:<select class="form-control" name="secquest3" required>
+						<label for="Security-Question-3">Security Question:</label>
+						<select class="form-control" name="secquest3"  required>
 						<!-- Questions-->
 						<?php registerQuestions(); ?>
 					</div>
 					<div class="form-group">
-						Answer:<input class="form-control" type="text" placeholder="Enter Answer" name="secanwser3" required>
+						<label for="Answer-3">Answer:</label>
+						<input class="form-control" type="text" placeholder="Enter Answer" name="secanwser3"  required>
 					</div>
 					<hr>
 					<div class="form-group">
-						<button class="btn btn-primary" name="registerBtn" type="submit">Register</button>
+						<button class="btn btn-primary" id="registerBtn" name="registerBtn" type="submit">Register</button>
 						<a href="index.html" class=""><button class="btn btn-danger">&nbsp Cancel &nbsp</button></a>
 					</div>
 				</form>
@@ -177,6 +198,7 @@ require("../utilities/utility.php");
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+		<script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+	
 	</body>
 </html>
