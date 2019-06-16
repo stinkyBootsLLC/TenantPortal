@@ -26,7 +26,7 @@
     $secAnswer1 = sanatizeData($_POST["secanwser1"]);	
 	$secAnswer2 = sanatizeData($_POST["secanwser2"]);
 	$secAnswer3 = sanatizeData($_POST["secanwser3"]);
-	//1qazxsw2@WSXZAQ!
+	
 	// password validation
 	if($userPassWord === $conFirmUserPassWord){
 		// the passwords are a match

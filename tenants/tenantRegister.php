@@ -109,6 +109,7 @@ require("../utilities/utility.php");
 							<input type="password" class="form-control" placeholder="Re-type Password" name="conFirmUserPassWord" id="conFirmUserPassWord"
 							pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}" 
 							title="1 upper case letter, 1 number and 1 special character and at least 8 characters in length"  required>
+							<span id='message'></span>
 					</div>
 					<hr>
 					<div class="form-group">
@@ -199,6 +200,9 @@ require("../utilities/utility.php");
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		<script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+		<script src="../assets/scripts/regis.js"></script>
+
+
 	
 	</body>
 </html>
