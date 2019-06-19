@@ -91,6 +91,8 @@
                 ?>
             </div>
             <div class="container">
+
+            <div class= "shadow p-3 mb-5 bg-white rounded" id="chartContainer" style="height: 370px; width: 100%;"></div>
             <?php $open = numberOfOpenIssues();$pending = numberOfPendingIssues(); $closed = numberOfClosedIssues();?>
                 <div class="row">
                     <div class="col-lg-4 col-md-8 col-sm-10">
@@ -150,6 +152,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Empty Card</h5>
                                     <p class="card-text">Empty Card.</p>
+                                   
+
                                     <a href="#" class="btn btn-primary">Button</a>
                                 </div>
                             </div>
@@ -167,57 +171,7 @@
                         </div> 
                     </div> 
                 </div><!--end class="row"-->
-
-
             </div> <!--end class="container"-->
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </main>
         <div class="top-spacing"></div>
         <div class="top-spacing"></div>
@@ -267,6 +221,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
         <!-- Reload JavaScript -->
         <script>
@@ -275,5 +230,46 @@
                 window.location.reload(1);
             }, 1800000);
         </script>
+
+        <script>
+            // CanvasJs Chart
+            window.onload = function () {
+                let open = <?php echo $open ?>;
+                let pending = <?php echo $pending ?>;
+                let closed = <?php echo $closed ?>;
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                title:{
+                    text: "Tenant's Issues Status"
+                },
+                axisY: {
+                    title: "Issues(ea)"
+                },
+                data: [{        
+                    type: "column",  
+                    showInLegend: true, 
+                    legendMarkerColor: "grey",
+                    legendText: "ea = each",
+                    dataPoints: [      
+                        { y: open, label: "Open" },
+                        { y: pending,  label: "Pending" },
+
+                        { y: closed,  label: "Closed" }
+                    ]
+                }]
+            });
+            chart.render();
+
+            }
+        </script>
+
+
+
+
+
+
+
     </body>
 </html>
