@@ -242,7 +242,7 @@
                 animationEnabled: true,
                 theme: "light2", // "light1", "light2", "dark1", "dark2"
                 title:{
-                    text: "Tenant's Issues Status"
+                    text: "Tenant's Issue Status"
                 },
                 axisY: {
                     title: "Issues(ea)"
