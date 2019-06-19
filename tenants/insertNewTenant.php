@@ -31,7 +31,8 @@
 	if($userPassWord === $conFirmUserPassWord){
 		// the passwords are a match
 		// if these 3 fields are not empty
-		if (!empty($email) && !empty($userPassWord) && !empty($apt)){
+		if (!empty($email) && !empty($userPassWord) && !empty($apt) && !empty($fName) && !empty($lName) && !empty($secAnswer1)  
+			&& !empty($secAnswer2) && !empty($secAnswer1)            ){
 			// check if the username already exists
 			$sql0 = "SELECT  tenantEmail from Tenants where tenantEmail = '$email'";
 			// returns a record
@@ -74,7 +75,14 @@
 				mysqli_close($conn);
 			}// end if ($conn->query($sql2) === TRUE)
 		
-		}//if (!empty($email) && !empty($userPassWord) && !empty($apt))
+		} else {
+			// not a mactch
+			echo "<script>alert('Required Fields are Missing!')</script>";
+			// redirect back to login form
+			header('Refresh: 1; URL = https://www.fbi.gov/investigate/cyber');
+
+		}
+			//if (!empty($email) && !empty($userPassWord) && !empty($apt))
 
 	} else {
 		// not a mactch
