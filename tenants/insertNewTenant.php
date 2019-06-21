@@ -1,3 +1,16 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tenant Portal</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+
 <?php
 /**
  * Date: 11 Jan 2019
@@ -51,7 +64,7 @@
 				VALUES ('$email',password('$userPassWord'),'$fName','$lName','$hPhone','$mPhone','$wPhone','$apt','$apt','$apt','$apt','$apt')";
 				// if the insert was created	
 				if ($conn->query($sql1) === TRUE) {
-					echo "New tenant record created successfully<br>";
+					//echo "New tenant record created successfully<br>";
 					$last_id = $conn->insert_id;
 				} else {
 					echo "Error: adding the new tenant contact admin";
@@ -63,9 +76,29 @@
 				TenantSecQues3_FK, TenantSecAns3) VALUES ('$last_id','$secquest1',password('$secAnswer1'),'$secquest2',password('$secAnswer2'),'$secquest3',password('$secAnswer3'))";
 
 				if ($conn->query($sql2) === TRUE) {
-					echo "New tenant profile record created successfully";
+					//echo "New tenant profile record created successfully";
+					echo "
+					<script>
+					$( function() {
+					  $( '#dialog-confirm' ).dialog({
+						resizable: false,
+						height: 'auto',
+						width: 400,
+						modal: true,
+						buttons: {
+						  'Ok': function() {
+							$( this ).dialog( 'close' );
+						  }
+						}
+					  });
+					} );
+					</script>";
+					echo "
+					<div id='dialog-confirm' title='Tenant Portal'>
+					<p>You have successfully registered <br>You are being re-directed to log-in page</p>
+					</div>";
 					// redirect back to login form
-					header('Refresh: 1; URL = index.html');
+					header('Refresh: 5; URL = index.html');
 				} else {
 					echo "Error: adding the new tenants profile table";
 					// future  redirect out of this page or add some sort 
@@ -81,14 +114,22 @@
 			// redirect back to login form
 			header('Refresh: 1; URL = https://www.fbi.gov/investigate/cyber');
 
-		}
-			//if (!empty($email) && !empty($userPassWord) && !empty($apt))
+		}// end if (empty field)
 
 	} else {
 		// not a mactch
 		echo "<script>alert('User Passwords DO NOT MATCH')</script>";
 		// redirect back to login form
 		header('Refresh: 1; URL = tenantRegister.php');
-
-	}
+	} // end if (password mismatch)
 ?>
+
+
+
+ 
+
+ 
+ 
+
+</body>
+</html>
