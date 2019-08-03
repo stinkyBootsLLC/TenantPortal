@@ -59,7 +59,7 @@
             <p>Open Maintenace issues </p>
         </div> 
         <div class="container">
-    
+        <div class="table-responsive">
             <?php 
                 /**
                  * Eduardo Estrada
@@ -128,7 +128,7 @@
                     echo "<h5>User Is Not Logged-In</h5>"; 
                 }// end if(isset($_SESSION['app_userEmail']) && isset($_SESSION['app_pass']))
             ?>
-
+            </div>
         </div> 
         <div class="top-spacing"></div>
 
