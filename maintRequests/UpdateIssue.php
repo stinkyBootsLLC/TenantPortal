@@ -70,6 +70,8 @@
                  * UpdateIssues.php
                  * Purpose:
                  * To update the maint issue by ID
+                 * Modification 11/3/2019 - added bootstrap 4 class='form-control' to fields
+                 * for a more responsive look on smaller devices 
                  */
                 include("../utilities/utility.php");
 
@@ -128,11 +130,6 @@
                     echo "<option value='closed'>closed</option>";
                     echo "</select><br>"; 
                     echo "</fieldset>";
-
-
-
-
-                    //echo "</div>";
                     // description field
                     echo "<fieldset class='form-group'>";
                     echo "<label for='Description'>Description:</label>";
