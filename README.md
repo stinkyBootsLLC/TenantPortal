@@ -17,30 +17,12 @@ Closed - issue HAS BEEN repaired (history)
 Currently; for security purposes, the user does not have the ability to update or delete 
 their profile. This is a feature I am still working on.
 
-
-
-
 ## Future Features:
 
 - User securely update and delete profile
 - Email Notification
 - SMS Notification
 - Picture of problem (Upload)
-
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
-
-
 
 Eduardo Estrada 2018
 
