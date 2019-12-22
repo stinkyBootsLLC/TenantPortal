@@ -1,6 +1,0 @@
-# Ignore 2 extensions
-*.pdf
-*.md
-
-# Ignore Directory
-sql/*
