@@ -14,6 +14,7 @@ categorized in three categories, open, pending and closed
 - Open - issue reported, but NOT scheduled for repair
 - Pending - issue IS scheduled for repaired
 - Closed - issue HAS BEEN repaired (history)
+
 Currently; for security purposes, the user does not have the ability to update or delete 
 their profile. This is a feature I am still working on.
 
