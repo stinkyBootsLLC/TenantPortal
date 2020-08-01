@@ -48,40 +48,23 @@
         </nav>
         <!-- Top Nav Bar -->
         <div class="top-spacing"></div>
-        <main>
-            <div class="row">
+        <main class="container">
+            <div class="row" style="margin-bottom: 5in;">
                 <div class="col-lg-2 col-md-2 col-sm-1"></div>
                 <div class="col-lg-8 col-md-8 col-sm-10" style ="padding: 0px 30px">
                     <div class="shadow p-3 mb-5 bg-white rounded main-title mainTitle-card">
                         <h1>Welcome to TENANT PORTAL</h1>
                         <h5>Please choose your role</h5>
+                        <div class="form-group">
+                            <select class="form-control" id="role-select">
+                                <option value="" disabled selected>Select your option</option>
+                                <option value="Tenant">Tenant</option>
+                                <option value="Maintenace">Maintenace</option>
+                            </select>
+                          </div>
                     </div>
                 </div>
             <div class="col-lg-2 col-md-2 col-sm-1"></div>
-            
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12" style ="padding: 0px 30px">
-                        <div class="shadow p-3 mb-5 bg-white rounded main-title login-cards">
-                            <a href="tenants/index.html">
-                                <ion-icon class="main-icons" name="people"></ion-icon>
-                                <h1> Tenant Login </h1>
-                            </a>                
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12" style ="padding: 0px 30px">
-                        <div class="shadow p-3 mb-5 bg-white rounded main-title login-cards">
-                            <a href="maintainers/index.html">
-                                <ion-icon class="main-icons" name="md-construct"></ion-icon>
-                                <h1>Maintenace Login</h1>
-                            </a>   
-                        </div>
-                    </div>
-            </div>
-
-            <div class="top-spacing"></div>
-            <div class="top-spacing"></div>
-            <div class="top-spacing"></div>
         </main>
         <!--==== FOOTER  Bootstrap 4 Class  Footer-Dark.css =======-->
         <div id="wrapper">
@@ -127,5 +110,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+
+        <script>
+            // 8/1/2020 new entrance implementation
+            $("#role-select").on('change', function() {
+                if (this.value === "Tenant"){
+                    document.location.href = 'tenants/';
+                } else {
+                    document.location.href = 'maintainers/';
+                }
+            });
+        </script>
     </body>
 </html>
